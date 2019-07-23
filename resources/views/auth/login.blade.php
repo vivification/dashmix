@@ -1,7 +1,6 @@
-
 @extends('layouts.login')
 
-
+@section('content')
 <!-- Page Container -->
 <!--
     Available classes for #page-container:
@@ -217,7 +216,4 @@ MAIN CONTENT LAYOUT
 
     <!-- Page JS Plugins -->
     <!-- Page JS Code -->
-
-
-
-
+@endsection
