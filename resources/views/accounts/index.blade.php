@@ -51,7 +51,7 @@
                                 <a href="#">{{$account->f_account_name}}</a>
                             </td>
                             <td class="font-w600">
-                                <a href="#">Client</a>
+                                {{$account->f_account_type_name}}
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_contact_primary}}
@@ -72,7 +72,7 @@
                                 {{$account->f_account_address_street}}
                             </td>
                             <td class="font-w600">
-                                Status
+                                {{$account->f_account_status_name}}
                             </td>
                         </tr>
                         @endforeach
