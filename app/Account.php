@@ -31,14 +31,16 @@ class Account extends Model
     ];
 
     public function account_status(){
-
-        $this->hasOne(AccountStatus::class, 'f_account_status', 'f_account_status_id');
+        // Needs to return relation
+        // 2nd Parameter: foreignKey corresponds to the primary key of the table you want to link.
+        // 3rd Parameter: localKey is the key in (accounts) table that connects to other table (technically speaking foreign key)
+        return $this->hasOne(AccountStatus::class, 'f_account_status_id', 'f_account_status');
 
     }
 
     public function account_type(){
 
-        $this->hasOne('App\AccountType', 'f_account_type');
+        return $this->hasOne(AccountType::class,'f_account_type_id','f_account_type');
 
     }
 
