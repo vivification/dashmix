@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\AccountType;
 use App\AccountStatus;
+use App\Http\Middleware;
 
 
 class Account extends Model
@@ -30,17 +31,19 @@ class Account extends Model
         'f_account_description'
     ];
 
+    public $primaryKey = 'id';
+
     public function account_status(){
         // Needs to return relation
         // 2nd Parameter: foreignKey corresponds to the primary key of the table you want to link.
         // 3rd Parameter: localKey is the key in (accounts) table that connects to other table (technically speaking foreign key)
-        return $this->hasOne(AccountStatus::class, 'f_account_status_id', 'f_account_status');
+        return $this->hasOne('App\AccountStatus', 'f_account_status_id', 'f_account_status');
 
     }
 
     public function account_type(){
 
-        return $this->hasOne(AccountType::class,'f_account_type_id','f_account_type');
+        return $this->hasOne('App\AccountType','f_account_type_id', 'f_account_type');
 
     }
 

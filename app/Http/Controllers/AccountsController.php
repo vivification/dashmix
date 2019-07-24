@@ -15,15 +15,14 @@ class AccountsController extends Controller
     public function index()
     {
 
-         $accounts = Account::all();
-//
-//        dd($accounts);
+//         $accounts = Account::all();
 
-//        $accounts = Account::with('account_status')->get();
+//         return view('accounts.index');
 
+        $accounts = Account::with('account_type', 'account_status')->get();
+//         dd($accounts);
         return view('accounts.index', compact('accounts'));
 
-//            return view('accounts.index');
     }
 
     /**
