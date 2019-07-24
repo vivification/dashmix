@@ -51,7 +51,9 @@
                                 <a href="#">{{$account->f_account_name}}</a>
                             </td>
                             <td class="font-w600">
-                                {{$account->f_account_type_name}}
+                                @if($account->account_type)
+                                    {{$account->account_type->f_account_type_name}}
+                                @endif
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_contact_primary}}
@@ -72,7 +74,9 @@
                                 {{$account->f_account_address_street}}
                             </td>
                             <td class="font-w600">
-                                {{$account->f_account_status_name}}
+                                @if($account->account_status)
+                                    {{$account->account_status->f_account_status_name}}
+                                @endif
                             </td>
                         </tr>
                         @endforeach
