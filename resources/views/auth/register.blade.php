@@ -1,4 +1,5 @@
 @extends('layouts.register')
+@section('content')
 <div id="page-container">
 
     <!-- Main Container -->
@@ -176,3 +177,4 @@
         </div>
     </div>
 </div>
+@endsection
