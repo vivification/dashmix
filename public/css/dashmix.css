@@ -568,6 +568,12 @@ pre code {
   padding-left: 14px;
 }
 
+.accounts-wrapper {
+
+  padding: 10px 40px 10px 40px;
+
+}
+
 .col {
   flex-basis: 0;
   flex-grow: 1;
@@ -1476,7 +1482,7 @@ pre code {
 }
 .table th,
 .table td {
-  padding: 0.75rem;
+  padding: 5px 5px 5px 5px;
   vertical-align: top;
   border-top: 1px solid #e6ebf4;
 }
@@ -26468,4 +26474,13 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   border-color: #022954;
   background: #74b3fb;
   opacity: 0.25;
+}
+
+.dataTables_filter {
+  text-align: right;
+  padding-right:50px;
+}
+
+.myCustomTable {
+ font-size: 14px;
 }
