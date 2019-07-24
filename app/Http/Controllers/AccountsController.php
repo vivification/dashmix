@@ -15,11 +15,11 @@ class AccountsController extends Controller
     public function index()
     {
 
-//         $accounts = Account::all();
+         $accounts = Account::all();
 //
 //        dd($accounts);
 
-        $accounts = Account::with('account_status')->get();
+//        $accounts = Account::with('account_status')->get();
 
         return view('accounts.index', compact('accounts'));
 
@@ -55,7 +55,10 @@ class AccountsController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $accounts = Account::find($id);
+
+        return view('accounts.show', compact('accounts'));
     }
 
     /**

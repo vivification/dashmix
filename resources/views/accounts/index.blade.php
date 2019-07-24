@@ -31,21 +31,27 @@
                         <thead>
                         <tr>
                             <th class="text-center" style="width: 50px;">#</th>
-                            <th>Company Name</th>
+                            <th class="d-none d-sm-table-cell" style="width: 300px;">Company Name</th>
+                            <th class="d-none d-sm-table-cell" style="width:auto;">Client Type</th>
                             <th class="d-none d-sm-table-cell" style="width:auto;">Contact</th>
                             <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
                             <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
+                            <th class="d-none d-sm-table-cell" style="width:auto;">Fax</th>
                             <th class="d-none d-sm-table-cell" style="width:auto;">Website</th>
-                            <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                            <th class="d-none d-sm-table-cell" style="width: 300px;">Address</th>
                             <th style="width: 15%;">Status</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($accounts as $account)
                         <tr>
-                            <td class="text-center">{{$account->id}}</td>
+                            <td class="text-center">
+                                <a href="accounts/view/{{$account->id}}">{{$account->id}}</a></td>
                             <td class="font-w600">
                                 <a href="#">{{$account->f_account_name}}</a>
+                            </td>
+                            <td class="font-w600">
+                                <a href="#">Client</a>
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_contact_primary}}
@@ -55,6 +61,9 @@
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_email_primary}}
+                            </td>
+                            <td class="font-w600">
+                                {{$account->f_account_fax}}
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_website}}

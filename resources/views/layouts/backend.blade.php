@@ -6,7 +6,7 @@
 
         <title>{{ config('app.name') }}</title>
 
-        <meta name="description" content="Dashmix - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+        <meta name="description" content="">
         <meta name="author" content="pixelcave">
         <meta name="robots" content="noindex, nofollow">
 
@@ -23,8 +23,6 @@
         <link rel="stylesheet" id="css-main" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700">
         <link rel="stylesheet" id="css-theme" href="{{ mix('css/dashmix.css') }}">
 
-        <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
-        <!-- <link rel="stylesheet" href="{{ mix('css/themes/xwork.css') }}"> -->
         @yield('css_after')
 
         <!-- Scripts -->
@@ -452,6 +450,7 @@
 
         <!-- Page JS Code -->
         <script src="{{ URL('js/pages/be_tables_datatables.min.js') }}"></script>
+
 
         @yield('js_after')
 

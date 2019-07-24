@@ -3672,6 +3672,17 @@ input[type=button].btn-block {
 .nav-tabs {
   border-bottom: 1px solid #e6ebf4;
 }
+
+.nav li a {
+  padding: 10px 15px;
+  border: white;
+}
+
+.nav li a:hover {
+  background-color: #0665d0;
+  color: #fff;
+}
+
 .nav-tabs .nav-item {
   margin-bottom: -1px;
 }
@@ -3691,7 +3702,7 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #fff;
+  background-color: #0665d0;
   border-color: #e6ebf4 #e6ebf4 #e6ebf4;
 }
 .nav-tabs .dropdown-menu {
@@ -10787,7 +10798,7 @@ body {
 
 b,
 strong {
-  font-weight: 600;
+  /*font-weight: 600;*/
 }
 
 a {
@@ -11941,7 +11952,7 @@ small,
 }
 .nav-tabs-block .nav-link.active,
 .nav-tabs-block .nav-item.show .nav-link {
-  color: #495057;
+  color: #0665d0;
   background-color: #fff;
   border-color: transparent;
 }
@@ -12833,9 +12844,6 @@ a.badge-secondary:focus, a.badge-secondary.focus {
 }
 .block.block-rounded {
   border-radius: 0.25rem;
-  border-top-color: dodgerblue;
-  border-top-width: thick;
-
 }
 .block.block-rounded > .block-header,
 .block.block-rounded > .nav-tabs {
