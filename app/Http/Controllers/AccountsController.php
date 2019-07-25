@@ -55,7 +55,7 @@ class AccountsController extends Controller
     public function show($id)
     {
 
-        $accounts = Account::with('account_type', 'account_status', 'contact_primary')->get()->find($id);
+        $accounts = Account::with('account_type', 'account_status', 'contact_primary', 'contact_list')->get()->find($id);
 
         return view('accounts.show', compact('accounts'));
     }

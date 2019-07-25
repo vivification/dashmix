@@ -232,7 +232,11 @@
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-fw fa-user d-sm-none"></i>
-                                <span class="d-none d-sm-inline-block">{{ Auth::user()->name }}</span>
+                                <span class="d-none d-sm-inline-block">
+                                    @if(Auth::check())
+                                    {{ Auth::user()->name }}
+                                    @endif
+                                </span>
                                 <i class="fa fa-fw fa-angle-down ml-1 d-none d-sm-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
@@ -351,20 +355,12 @@
 {{--            }--}}
 {{--        </script>--}}
 
-<<<<<<< HEAD
-
 
 {{--        <script async defer src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo&callback=initMap') }}"></script>--}}
 
         <!-- Page JS Code -->
 
-=======
         <script async defer src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo&callback=initMap') }}"></script>
-
-
         <!-- Page JS Code -->
-
-
->>>>>>> v1
     </body>
 </html>

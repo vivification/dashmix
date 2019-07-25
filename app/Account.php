@@ -53,6 +53,12 @@ class Account extends Model
 
     }
 
+    public function contact_list(){
+
+        return $this->hasOne('App\AccountContact', 'f_contact_id', 'id' );
+
+    }
+
 
 
 }

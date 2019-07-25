@@ -37,10 +37,9 @@
                             <th class="d-none d-sm-table-cell" style="width:auto;">Contact</th>
                             <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
                             <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
-                            <th class="d-none d-sm-table-cell" style="width:auto;">Fax</th>
                             <th class="d-none d-sm-table-cell" style="width:auto;">Website</th>
                             <th class="d-none d-sm-table-cell" style="width: 300px;">Address</th>
-                            <th style="width: 15%;">Status</th>
+                            <th style="width: 5%;">Status</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -64,9 +63,9 @@
 
                                     {{--  if you ever want to access column details of other table via relation, you will have to follow this workflow.--}}
 
-                                    {{-- $variable-> relation_name-> column_name (secondary_table/other_table)--}}
+                                    {{-- $variable-> relation_name-> column_name (secondary_table/other_table, then the column name)--}}
 
-                                    {{$account->contact_primary->f_contact_first_name}}
+                                    {{$account->contact_primary->f_contact_first_name .' '.$account->contact_primary->f_contact_last_name}}
                                 @endif
                             </td>
                             <td class="font-w600">
@@ -74,9 +73,6 @@
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_email_primary}}
-                            </td>
-                            <td class="font-w600">
-                                {{$account->f_account_fax}}
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_website}}
