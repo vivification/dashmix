@@ -58,7 +58,10 @@
                             </td>
                             <td class="font-w600">
                                 @if($account->contact_primary)
-                                    {{$account->contact_primary->f_account_contact_primary}}
+                                    {{-- No such field 'f_account_contact_primary' exists in table f_contact, after relation you need to call the db column that actuall exists  --}}
+                                    {{-- {{$account->contact_primary->f_account_contact_primary}}--}}
+                                    {{-- Add first_name just for example --}}
+                                    {{$account->contact_primary->f_contact_first_name}}
                                 @endif
                             </td>
                             <td class="font-w600">
