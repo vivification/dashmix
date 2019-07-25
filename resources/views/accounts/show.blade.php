@@ -33,20 +33,7 @@
                 <!-- Block Tabs -->
                 <div class="row">
                     <div class="col-lg-12 accounts-wrapper">
-                        <div class="row">
-                            <br>
-                            <br>
-                                <div class="col-sm-6 col-xl-4">
 
-                                </div>
-                            <br>
-                            <br>
-
-                            @if($accounts->contact_primary)
-                                {{$accounts->contact_primary->f_account_contact_primary}}
-                            @endif
-
-                        </div>
                         <!-- Block Tabs Default Style -->
                             <div class="block block-rounded block-bordered">
                                 <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
@@ -178,87 +165,30 @@
                                                    <!-- Overlay Map Container -->
 {{--                                                   <div id="js-map-overlay" style="height: 600px;">--}}
                                                    <div id="map" style="height: 600px;">
+
+
+
                                                    </div>
 
-{{--                                                   <script>--}}
-{{--                                                       function initMap(){--}}
-{{--                                                           var options = {--}}
-{{--                                                               zoom:8,--}}
-{{--                                                               center:{lat:42.3601,lng:-71.0589}--}}
-{{--                                                           }--}}
-
-{{--                                                           var map = new google.maps.Map(document.getElementById('map'), options);--}}
-{{--                                                       }--}}
-{{--                                                   </script>--}}
-
-                                                   <div id="formatted-address"></div>
-                                                   <div id="address-components"></div>
-
                                                    <script>
-                                                       // call GeoCode see https://www.youtube.com/watch?v=pRiQeo17u6c
-                                                       geocode();
+                                                       function initMap(){
+                                                           var options = {
+                                                               zoom:8,
+                                                               center:{lat:42.3601,lng:-71.0589}
+                                                           }
 
-                                                       function geocode(){
-                                                           var location = '56 Swan Parade Warner';
-                                                           axios.get('https://maps.googleapis.com/maps/api/geocode/json?', {
-                                                               params:{
-                                                                   address:location,
-                                                                   key:'AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo'
-                                                               }
-                                                           })
-                                                             .then(function(response){
-                                                                 //Log full response
-                                                                 console.log(response);
-
-                                                                 //Geometry
-                                                                 var lat = response.data.results[0].geometry.location.lat;
-                                                                 var lng = response.data.results[0].geometry.location.lng;
-
-                                                                 var geometryOutput = `
-
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item"><strong>${formattedAddress}</strong>:{lat}</li>
-                                                                        <li class="list-group-item"><strong>${formattedAddress}</strong>:{lng}</li>
-                                                                    </ul>
-
-                                                                 `;
-
-                                                                 // //Formatted Address
-                                                                 var formattedAddress = response.data.results[0].formatted_address;
-                                                                 var formattedAddressOutput = `
-                                                                 <ul class="list-group">
-                                                                    <li class="list-group-item">${formattedAddress}</li>
-                                                                 </ul>
-                                                                 `;
-                                                                 //
-                                                                 // //Address Components
-                                                                 // var addressComponents = response.data.results[0].address_components;
-                                                                 // var addressComponentsOutput = '<ul class="list-group">';
-                                                                 // for(var i = 0;i < addressComponents.length;'i++'){
-                                                                 //     addressComponentsOutput += `
-                                                                 //     <li class="list-group-item"><strong>${addressComponents[i].types[0]}</strong>: ${addressComponents[i].long_name}</li>
-                                                                 //     `;
-                                                                 //     addressComponentsOutput += '</ul>';
-                                                                 // }
-
-
-                                                                 //Output to App
-                                                                 document.getElementById('formatted-address').innerHTML =
-                                                                     formattedAddressOutput;
-                                                                 // document.getElementById('address-components').innerHTML =
-                                                                 //     addressComponentsOutput;
-                                                                 document.getElementById('geometry').innerHTML =
-                                                                     geometryOutput;
-                                                               })
-                                                               .catch(function(error){
-                                                                console.log(error);
-                                                               });
+                                                           var map = new google.maps.Map(document.getElementById('map'), options);
                                                        }
                                                    </script>
+
+
+
                                                </div>
                                                <!-- END Overlay Map -->
                                            </div>
+
                                        </div>
+
                                     </div>
                                     <div class="tab-pane" id="btabs-alt-static-contacts" role="tabpanel">
                                         <!-- Small Table -->
@@ -332,13 +262,15 @@
                                         <p>...</p>
                                     </div>
 
+
+
+
                                 </div>
                             </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                        <!-- END Block Tabs Default Style -->
+
 
     <div class="content">
     </div>
@@ -349,4 +281,5 @@
 @section('js_after')
 
 @stop
+
 
