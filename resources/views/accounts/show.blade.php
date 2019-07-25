@@ -67,6 +67,49 @@
                                     <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
 
                                        <div class="row">
+=======
+                                </div>
+                            <br>
+                            <br>
+
+                            @if($accounts->contact_primary)
+                                {{$accounts->contact_primary->f_account_contact_primary}}
+                            @endif
+
+                        </div>
+                        <!-- Block Tabs Default Style -->
+                            <div class="block block-rounded block-bordered">
+                                <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#btabs-alt-static-summary">Summary +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-contacts">Contacts +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Activities +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Invoices +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Purchases +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Locations +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Shipping Addresses +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Billing Groups +</a>
+                                    </li>
+
+                                </ul>
+                                <div class="block-content tab-content">
+                                    <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
+
+                                       <div class="row">
 
                                            <div class="col-md-6">
                                                <div class="block block-rounded block-bordered">
