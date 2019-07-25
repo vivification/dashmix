@@ -27,6 +27,7 @@
 
         <!-- Scripts -->
         <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
+        <script src="{{ URL('https://unpkg.com/axios/dist/axios.min.js') }}"></script>
     </head>
     <body>
         <!-- Page Container -->
@@ -190,31 +191,6 @@
                                 <span class="nav-main-link-name">Locations</span>
                             </a>
                         </li>
-
-
-{{--                        <li class="nav-main-item{{ request()->is('examples/*') ? ' open' : '' }}">--}}
-{{--                            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">--}}
-{{--                                <i class="nav-main-link-icon si si-bulb"></i>--}}
-{{--                                <span class="nav-main-link-name">Examples</span>--}}
-{{--                            </a>--}}
-{{--                            <ul class="nav-main-submenu">--}}
-{{--                                <li class="nav-main-item">--}}
-{{--                                    <a class="nav-main-link{{ request()->is('examples/plugin-helper') ? ' active' : '' }}" href="/examples/plugin-helper">--}}
-{{--                                        <span class="nav-main-link-name">Plugin with JS Helper</span>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                                    <li class="nav-main-item">--}}
-{{--                                        <a class="nav-main-link{{ request()->is('examples/plugin-init') ? ' active' : '' }}" href="/examples/plugin-init">--}}
-{{--                                            <span class="nav-main-link-name">Plugin with JS Init</span>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                <li class="nav-main-item">--}}
-{{--                                    <a class="nav-main-link{{ request()->is('examples/blank') ? ' active' : '' }}" href="/examples/blank">--}}
-{{--                                        <span class="nav-main-link-name">Blank</span>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
                         <li class="nav-main-heading">More</li>
                         <li class="nav-main-item">
                             <a class="nav-main-link" href="/">
@@ -260,120 +236,11 @@
                                 <i class="fa fa-fw fa-angle-down ml-1 d-none d-sm-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
-{{--                                <div class="bg-primary-darker rounded-top font-w600 text-white text-center p-3">--}}
-{{--                                   User Options--}}
-{{--                                </div>--}}
                                 <div class="p-2">
-{{--                                    <a class="dropdown-item" href="javascript:void(0)">--}}
-{{--                                        <i class="far fa-fw fa-user mr-1"></i> Profile--}}
-{{--                                    </a>--}}
-{{--                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">--}}
-{{--                                        <span><i class="far fa-fw fa-envelope mr-1"></i> Inbox</span>--}}
-{{--                                        <span class="badge badge-primary">3</span>--}}
-{{--                                    </a>--}}
-{{--                                    <a class="dropdown-item" href="javascript:void(0)">--}}
-{{--                                        <i class="far fa-fw fa-file-alt mr-1"></i> Invoices--}}
-{{--                                    </a>--}}
-{{--                                    <div role="separator" class="dropdown-divider"></div>--}}
-
-{{--                                    <!-- Toggle Side Overlay -->--}}
-{{--                                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->--}}
-{{--                                    <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">--}}
-{{--                                        <i class="far fa-fw fa-building mr-1"></i> Settings--}}
-{{--                                    </a>--}}
-                                    <!-- END Side Overlay -->
-
-{{--                                    <div role="separator" class="dropdown-divider"></div>--}}
                                     <a class="dropdown-item" href="{{ url('/logout') }}" document.getElementById('logout-form').submit();"> Logout </a>
-
-
                                 </div>
                             </div>
                         </div>
-                        <!-- END User Dropdown -->
-
-                        <!-- Notifications Dropdown -->
-{{--                        <div class="dropdown d-inline-block">--}}
-{{--                            <button type="button" class="btn btn-dual" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                <i class="fa fa-fw fa-bell"></i>--}}
-{{--                                <span class="badge badge-secondary badge-pill">5</span>--}}
-{{--                            </button>--}}
-{{--                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="page-header-notifications-dropdown">--}}
-{{--                                <div class="bg-primary-darker rounded-top font-w600 text-white text-center p-3">--}}
-{{--                                   Notifications--}}
-{{--                                </div>--}}
-{{--                                <ul class="nav-items my-2">--}}
-{{--                                    <li>--}}
-{{--                                        <a class="text-dark media py-2" href="javascript:void(0)">--}}
-{{--                                            <div class="mx-3">--}}
-{{--                                                <i class="fa fa-fw fa-check-circle text-success"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="media-body font-size-sm pr-2">--}}
-{{--                                                <div class="font-w600">App was updated to v5.6!</div>--}}
-{{--                                                <div class="text-muted font-italic">3 min ago</div>--}}
-{{--                                            </div>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a class="text-dark media py-2" href="javascript:void(0)">--}}
-{{--                                            <div class="mx-3">--}}
-{{--                                                <i class="fa fa-fw fa-user-plus text-info"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="media-body font-size-sm pr-2">--}}
-{{--                                                <div class="font-w600">New Subscriber was added! You now have 2580!</div>--}}
-{{--                                                <div class="text-muted font-italic">10 min ago</div>--}}
-{{--                                            </div>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a class="text-dark media py-2" href="javascript:void(0)">--}}
-{{--                                            <div class="mx-3">--}}
-{{--                                                <i class="fa fa-fw fa-times-circle text-danger"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="media-body font-size-sm pr-2">--}}
-{{--                                                <div class="font-w600">Server backup failed to complete!</div>--}}
-{{--                                                <div class="text-muted font-italic">30 min ago</div>--}}
-{{--                                            </div>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a class="text-dark media py-2" href="javascript:void(0)">--}}
-{{--                                            <div class="mx-3">--}}
-{{--                                                <i class="fa fa-fw fa-exclamation-circle text-warning"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="media-body font-size-sm pr-2">--}}
-{{--                                                <div class="font-w600">You are running out of space. Please consider upgrading your plan.</div>--}}
-{{--                                                <div class="text-muted font-italic">1 hour ago</div>--}}
-{{--                                            </div>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a class="text-dark media py-2" href="javascript:void(0)">--}}
-{{--                                            <div class="mx-3">--}}
-{{--                                                <i class="fa fa-fw fa-plus-circle text-primary"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="media-body font-size-sm pr-2">--}}
-{{--                                                <div class="font-w600">New Sale! + $30</div>--}}
-{{--                                                <div class="text-muted font-italic">2 hours ago</div>--}}
-{{--                                            </div>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                                <div class="p-2 border-top">--}}
-{{--                                    <a class="btn btn-light btn-block text-center" href="javascript:void(0)">--}}
-{{--                                        <i class="fa fa-fw fa-eye mr-1"></i> View All--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- END Notifications Dropdown -->--}}
-
-                        <!-- Toggle Side Overlay -->
-                        <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-{{--                        <button type="button" class="btn btn-dual" data-toggle="layout" data-action="side_overlay_toggle">--}}
-{{--                            <i class="far fa-fw fa-list-alt"></i>--}}
-{{--                        </button>--}}
-                        <!-- END Toggle Side Overlay -->
                     </div>
                     <!-- END Right Section -->
                 </div>
@@ -425,7 +292,7 @@
                             Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://goo.gl/vNS3I" target="_blank">pixelcave</a>
                         </div>
                         <div class="col-sm-6 order-sm-1 text-center text-sm-left">
-                            <a class="font-w600" href="https://goo.gl/mDBqx1" target="_blank">Dashmix</a> &copy; <span data-toggle="year-copy">2018</span>
+                            <a class="font-w600" href="https://www.retailquip.com" target="_blank">RDCS</a> &copy; <span data-toggle="year-copy">2019</span>
                         </div>
                     </div>
                 </div>
@@ -451,8 +318,44 @@
         <!-- Page JS Code -->
         <script src="{{ URL('js/pages/be_tables_datatables.min.js') }}"></script>
 
+{{--        <!-- Page JS Plugins -->--}}
+{{--        <!-- Google Maps API Key (you will have to obtain a Google Maps API key to use Google Maps) -->--}}
+{{--        <!-- For more info please have a look at https://developers.google.com/maps/documentation/javascript/get-api-key#key -->--}}
+{{--        <script src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo') }}"></script>--}}
+{{--        <script src="{{ URL::asset ('js/plugins/gmaps/gmaps.min.js') }}"></script>--}}
+
+{{--        <!-- Page JS Code -->--}}
+{{--        <script src="{{ URL::asset ('js/pages/be_comp_maps_google.min.js') }}"></script>--}}
 
         @yield('js_after')
+
+        <!-- Page JS Plugins -->
+        <!-- Google Maps API Key (you will have to obtain a Google Maps API key to use Google Maps) -->
+        <!-- For more info please have a look at https://developers.google.com/maps/documentation/javascript/get-api-key#key -->
+
+        <!-- My backup -->
+{{--        <script src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo') }}"></script>--}}
+{{--        <script src="{{ URL::asset ('js/plugins/gmaps/gmaps.min.js') }}"></script>--}}
+{{--        <script src="{{ URL::asset ('js/pages/be_comp_maps_google.min.js') }}"></script>--}}
+
+        <!-- Test New Function -->
+
+{{--        <script>--}}
+{{--            function initMap(){--}}
+{{--                var options = {--}}
+{{--                    zoom:8,--}}
+{{--                    center:{lat:42.3601,lng:-71.0589}--}}
+{{--                }--}}
+
+{{--                var map = new google.maps.Map(document.getElementById('map'), options);--}}
+{{--            }--}}
+{{--        </script>--}}
+
+
+
+{{--        <script async defer src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo&callback=initMap') }}"></script>--}}
+
+        <!-- Page JS Code -->
 
     </body>
 </html>
