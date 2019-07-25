@@ -16,6 +16,7 @@
         </div>
     </div>
 
+
     <!-- Page Content -->
     <div class="content">
         <div class="row">
@@ -48,7 +49,7 @@
                             <td class="text-center">
                                 <a href="accounts/view/{{$account->id}}">{{$account->id}}</a></td>
                             <td class="font-w600">
-                                <a href="#">{{$account->f_account_name}}</a>
+                                <a href="accounts/view/{{$account->id}}">{{$account->f_account_name}}</a>
                             </td>
                             <td class="font-w600">
                                 @if($account->account_type)
@@ -56,7 +57,9 @@
                                 @endif
                             </td>
                             <td class="font-w600">
-                                {{$account->f_account_contact_primary}}
+                                @if($account->contact_primary)
+                                    {{$account->contact_primary->f_account_contact_primary}}
+                                @endif
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_phone_primary}}
