@@ -47,5 +47,12 @@ class Account extends Model
 
     }
 
+    public function contact_primary(){
+
+        return $this->hasOne('App\AccountContact', 'f_contact_id', 'f_account_contact_primary' );
+
+    }
+
+
 
 }

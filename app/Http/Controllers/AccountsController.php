@@ -19,8 +19,8 @@ class AccountsController extends Controller
 
 //         return view('accounts.index');
 
-        $accounts = Account::with('account_type', 'account_status')->get();
-//         dd($accounts);
+        $accounts = Account::with('account_type', 'account_status', 'contact_primary')->get();
+
         return view('accounts.index', compact('accounts'));
 
     }

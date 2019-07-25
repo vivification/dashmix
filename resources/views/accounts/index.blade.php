@@ -56,7 +56,9 @@
                                 @endif
                             </td>
                             <td class="font-w600">
-                                {{$account->f_account_contact_primary}}
+                                @if($account->contact_primary)
+                                    {{$account->contact_primary->f_account_contact_primary}}
+                                @endif
                             </td>
                             <td class="font-w600">
                                 {{$account->f_account_phone_primary}}
