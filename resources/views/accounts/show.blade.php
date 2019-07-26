@@ -33,11 +33,41 @@
                 <!-- Block Tabs -->
                 <div class="row">
                     <div class="col-lg-12 accounts-wrapper">
-                        <div class="row">
-                            <br>
-                            <br>
-                                <div class="col-sm-6 col-xl-4">
 
+                        <!-- Block Tabs Default Style -->
+                            <div class="block block-rounded block-bordered">
+                                <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#btabs-alt-static-summary">Summary +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-contacts">Contacts +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Activities +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Invoices +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Purchases +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Locations +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Shipping Addresses +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Billing Groups +</a>
+                                    </li>
+
+                                </ul>
+                                <div class="block-content tab-content">
+                                    <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
+
+                                       <div class="row">
+=======
                                 </div>
                             <br>
                             <br>
@@ -285,70 +315,8 @@
                         <!-- END Block Tabs Default Style -->
 
 
-{{--                <div class="row" style="padding: 20px 20px 20px 20px;">--}}
-{{--                    <div class="content">--}}
-{{--                        <div class="row">--}}
-{{--                            <ul class="nav nav-pills">--}}
-{{--                                <li class=""><a data-toggle="tab" href="#home">Overview +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu1">Contacts +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu1">Activities +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu1">Accounts +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu2">Invoices +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu3">Purchases +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu4">Locations +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu5">Shipping Addresses +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu6">Billing Groups +</a></li>--}}
-{{--                                <li><a data-toggle="pill" href="#menu6">Notes +</a></li>--}}
-{{--                            </ul>--}}
-
-{{--                            <div class="tab-content clearfix">--}}
-{{--                                <div id="home" class="tab-pane fade">--}}
-{{--                                    <div class="block block-themed bg-image" style="background-color: rgba(5, 77, 158, 0.8) !important">--}}
-{{--                                        <div class="block-header bg-primary-dark-op">--}}
-
-{{--                                            ssss--}}
-{{--                                        </div>--}}
-{{--                                <h1>Hello</h1>--}}
-
-{{--                                </div>--}}
-{{--                                <div id="menu1" class="tab-pane fade">--}}
-{{--                                    <h1>Hello 2</h1>--}}
-{{--                                </div>--}}
-{{--                                <div id="menu2" class="tab-pane fade">--}}
-
-{{--                                </div>--}}
-{{--                                <div id="menu3" class="tab-pane fade">--}}
-
-{{--                                </div>--}}
-{{--                                <div id="menu4" class="tab-pane fade">--}}
-
-{{--                                </div>--}}
-{{--                                <div id="menu5" class="tab-pane fade">--}}
-
-{{--                                </div>--}}
-{{--                                <div id="menu6" class="tab-pane fade">--}}
-
-{{--                                </div>--}}
-{{--                                <div id="menu7" class="tab-pane fade">--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Page Content -->
     <div class="content">
     </div>
-    <!-- END Page Content -->
-    <!-- Page JS Plugins -->
 
 @endsection
 
@@ -356,4 +324,5 @@
 @section('js_after')
 
 @stop
+
 

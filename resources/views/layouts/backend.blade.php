@@ -27,6 +27,7 @@
 
         <!-- Scripts -->
         <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
+        <script src="{{ URL('https://unpkg.com/axios/dist/axios.min.js') }}"></script>
     </head>
     <body>
         <!-- Page Container -->
@@ -350,11 +351,20 @@
 {{--            }--}}
 {{--        </script>--}}
 
+<<<<<<< HEAD
+
+
+{{--        <script async defer src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo&callback=initMap') }}"></script>--}}
+
+        <!-- Page JS Code -->
+
+=======
         <script async defer src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo&callback=initMap') }}"></script>
 
 
         <!-- Page JS Code -->
 
 
+>>>>>>> v1
     </body>
 </html>

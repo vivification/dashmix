@@ -61,6 +61,11 @@
                                     {{-- No such field 'f_account_contact_primary' exists in table f_contact, after relation you need to call the db column that actuall exists  --}}
                                     {{-- {{$account->contact_primary->f_account_contact_primary}}--}}
                                     {{-- Add first_name just for example --}}
+
+                                    {{--  if you ever want to access column details of other table via relation, you will have to follow this workflow.--}}
+
+                                    {{-- $variable-> relation_name-> column_name (secondary_table/other_table)--}}
+
                                     {{$account->contact_primary->f_contact_first_name}}
                                 @endif
                             </td>
