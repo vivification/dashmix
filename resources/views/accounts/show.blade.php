@@ -34,7 +34,6 @@
                 <div class="row">
                     <div class="col-lg-12 accounts-wrapper">
 
-
                         <!-- Block Tabs Default Style -->
                             <div class="block block-rounded block-bordered">
                                 <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
@@ -61,6 +60,45 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#btabs-alt-static-billing">Billing Groups +</a>
+                                    </li>
+
+                                </ul>
+                                <div class="block-content tab-content">
+                                    <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
+
+                                       <div class="row">
+
+                            @if($accounts->contact_primary)
+                                {{$accounts->contact_primary->f_account_contact_primary}}
+                            @endif
+
+                        </div>
+                        <!-- Block Tabs Default Style -->
+                            <div class="block block-rounded block-bordered">
+                                <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#btabs-alt-static-summary">Summary +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-contacts">Contacts +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Activities +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Invoices +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Purchases +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Locations +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Shipping Addresses +</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#btabs-alt-static-activities">Billing Groups +</a>
                                     </li>
 
                                 </ul>
@@ -239,49 +277,6 @@
                                                             </td>
                                                             <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
-                                                                 <button type="button" class="btn btn-rounded btn-sm ">
-                                                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                                                 </button>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <!-- END Dynamic Table Full -->
-
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-notes" role="tabpanel">
-                                        <h4 class="font-w400">Notes Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-invoices" role="tabpanel">
-                                        <h4 class="font-w400">Invoices Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-purchases" role="tabpanel">
-                                        <h4 class="font-w400">Purchases Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-locations" role="tabpanel">
-                                        <h4 class="font-w400">Locations Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-shipping" role="tabpanel">
-                                        <h4 class="font-w400">Shipping Address Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-billing" role="tabpanel">
-                                        <h4 class="font-w400">Billing Groups</h4>
-                                        <p>...</p>
-                                    </div>
-
-
-
-
                                 </div>
                             </div>
                     </div>
@@ -289,10 +284,7 @@
                         <!-- END Block Tabs Default Style -->
 
 
-                <div class="content">
-            </div>
-            </div>
-        </div>
+    <div class="content">
     </div>
 
 @endsection
