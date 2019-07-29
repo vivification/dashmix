@@ -246,38 +246,39 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($accounts as $account)
-                                                        <tr>
-                                                            <td class="text-center">
-                                                                @if($accounts->contact_list)
-                                                                {{$accounts->contact_list->f_contact_id}}
-                                                                @endif
-                                                            </td>
-                                                            <td class="font-w600">
-                                                                @if($accounts->contact_list)
-                                                                    {{$accounts->contact_list->f_contact_first_name .' '.$accounts->contact_list->f_contact_last_name}}
-                                                                @endif
-                                                            </td>
-                                                            <td class="font-w600">
-                                                                @if($accounts->contact_list)
-                                                                    {{$accounts->contact_list->f_contact_address_street}}
-                                                                @endif
-                                                            </td>
-                                                            <td class="font-w600">
+                                                    <?php
+                                                        // we don't need to use foreach on $accounts because $accounts will always have one account
+                                                        // We need to use foreach for contact list since we will have an array of contacts
+                                                    ?>
+                                                    @if($accounts->contact_list)
+                                                        @foreach($accounts->contact_list as $single_contact)
+                                                            <tr>
+                                                                <td class="text-center">
+                                                                    {{$single_contact->f_contact_id}}
+                                                                </td>
+                                                                <td class="font-w600">
+                                                                    {{$single_contact->f_contact_first_name .' '.$single_contact->f_contact_last_name}}
+                                                                </td>
+                                                                <td class="font-w600">
+                                                                    {{$single_contact->f_contact_address_street}}
+                                                                </td>
+                                                                <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
+                                                                </td>
+                                                                <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
+                                                                </td>
+                                                                <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
+                                                                </td>
+                                                                <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
-                                                            </td>
-                                                        </tr>
+                                                                </td>
+                                                                <td class="font-w600">
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @endif
                                                     </tbody>
                                                 </table>
                                             </div>
