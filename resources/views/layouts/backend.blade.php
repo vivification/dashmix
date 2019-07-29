@@ -28,6 +28,12 @@
         <!-- Scripts -->
         <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
         <script src="{{ URL('https://unpkg.com/axios/dist/axios.min.js') }}"></script>
+
+        {{--Quotes--}}
+        {{--https://laraveldaily.teachable.com/courses/378499/lectures/5842594--}}
+        <script src="{{ URL('//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js') }}"></script>
+        <script src="{{ URL('//code.jquery.com/jquery-1.11.1.min.js') }}"></script>
+
     </head>
     <body>
         <!-- Page Container -->
@@ -191,6 +197,13 @@
                                 <span class="nav-main-link-name">Locations</span>
                             </a>
                         </li>
+                        <li class="nav-main-heading">Sales & Quotes</li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('quotes') ? ' active' : '' }}" href="/quotes/create">
+                                <i class="nav-main-link-icon si si-credit-card"></i>
+                                <span class="nav-main-link-name">Create Quote</span>
+                            </a>
+                        </li>
                         <li class="nav-main-heading">More</li>
                         <li class="nav-main-item">
                             <a class="nav-main-link" href="/">
@@ -232,7 +245,11 @@
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-fw fa-user d-sm-none"></i>
-                                <span class="d-none d-sm-inline-block">{{ Auth::user()->name }}</span>
+                                <span class="d-none d-sm-inline-block">
+                                    @if(Auth::check())
+                                    {{ Auth::user()->name }}
+                                    @endif
+                                </span>
                                 <i class="fa fa-fw fa-angle-down ml-1 d-none d-sm-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
@@ -307,6 +324,7 @@
         <!-- Laravel Scaffolding JS -->
         <script src="{{ mix('js/laravel.app.js') }}"></script>
 
+                {{--Laravel Data Tables--}}
         <script src="{{ URL('js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
         <script src="{{ URL('js/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
         <script src="{{ URL('js/plugins/datatables/buttons/dataTables.buttons.min.js') }}"></script>
@@ -329,42 +347,8 @@
 
         @yield('js_after')
 
-        <!-- Page JS Plugins -->
-        <!-- Google Maps API Key (you will have to obtain a Google Maps API key to use Google Maps) -->
-        <!-- For more info please have a look at https://developers.google.com/maps/documentation/javascript/get-api-key#key -->
-
-        <!-- My backup -->
-{{--        <script src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo') }}"></script>--}}
-{{--        <script src="{{ URL::asset ('js/plugins/gmaps/gmaps.min.js') }}"></script>--}}
-{{--        <script src="{{ URL::asset ('js/pages/be_comp_maps_google.min.js') }}"></script>--}}
-
-        <!-- Test New Function -->
-
-{{--        <script>--}}
-{{--            function initMap(){--}}
-{{--                var options = {--}}
-{{--                    zoom:8,--}}
-{{--                    center:{lat:42.3601,lng:-71.0589}--}}
-{{--                }--}}
-
-{{--                var map = new google.maps.Map(document.getElementById('map'), options);--}}
-{{--            }--}}
-{{--        </script>--}}
-
-<<<<<<< HEAD
-
-
-{{--        <script async defer src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo&callback=initMap') }}"></script>--}}
-
-        <!-- Page JS Code -->
-
-=======
+        <!-- Google Maps for Accounts Page -->
         <script async defer src="{{ URL::asset ('https://maps.googleapis.com/maps/api/js?key=AIzaSyAikFIJY1KeAAO-o180CqzNPp8mOgRvDMo&callback=initMap') }}"></script>
-
-
         <!-- Page JS Code -->
-
-
->>>>>>> v1
     </body>
 </html>

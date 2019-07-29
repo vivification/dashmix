@@ -20,4 +20,10 @@ class AccountContact extends Model
 
 }
 
+    public function additionalcontacts(){
+
+        return $this->hasMany('App\Account', 'f_account_id', 'f_contact_id');
+
+    }
+
 }

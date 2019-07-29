@@ -44,22 +44,22 @@
                                         <a class="nav-link" href="#btabs-alt-static-contacts">Contacts +</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Activities +</a>
+                                        <a class="nav-link" href="#btabs-alt-static-notes">Notes +</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Invoices +</a>
+                                        <a class="nav-link" href="#btabs-alt-static-invoices">Invoices +</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Purchases +</a>
+                                        <a class="nav-link" href="#btabs-alt-static-purchases">Purchases +</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Locations +</a>
+                                        <a class="nav-link" href="#btabs-alt-static-locations">Locations +</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Shipping Addresses +</a>
+                                        <a class="nav-link" href="#btabs-alt-static-shipping">Shipping Addresses +</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Billing Groups +</a>
+                                        <a class="nav-link" href="#btabs-alt-static-billing">Billing Groups +</a>
                                     </li>
 
                                 </ul>
@@ -67,10 +67,6 @@
                                     <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
 
                                        <div class="row">
-=======
-                                </div>
-                            <br>
-                            <br>
 
                             @if($accounts->contact_primary)
                                 {{$accounts->contact_primary->f_account_contact_primary}}
@@ -208,9 +204,6 @@
                                                    <!-- Overlay Map Container -->
 {{--                                                   <div id="js-map-overlay" style="height: 600px;">--}}
                                                    <div id="map" style="height: 600px;">
-
-
-
                                                    </div>
 
                                                    <script>
@@ -223,9 +216,6 @@
                                                            var map = new google.maps.Map(document.getElementById('map'), options);
                                                        }
                                                    </script>
-
-
-
                                                </div>
                                                <!-- END Overlay Map -->
                                            </div>
@@ -234,88 +224,78 @@
 
                                     </div>
                                     <div class="tab-pane" id="btabs-alt-static-contacts" role="tabpanel">
-                                        <!-- Small Table -->
-                                        <div class="block block-rounded block">
-{{--                                            <div class="block-header block-header-default">--}}
-{{--                                                <h3 class="block-title">Small Table</h3>--}}
-{{--                                                <div class="block-options">--}}
-{{--                                                    <div class="block-options-item">--}}
-{{--                                                        <code>.table-sm</code>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-                                            <div class="block-content">
-                                                <table class="table table-sm table-vcenter">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title"><i class="far fa-address-book fa-lg"></i> Contacts</h3>
+                                            </div>
+                                            <div class="block-content block-content-full">
+                                                <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                                                <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
                                                     <thead>
                                                     <tr>
-                                                        <th>#</th>
-                                                        <th>Name</th>
-                                                        <th class="d-none d-sm-table-cell">Access</th>
-                                                        <th class="text-center">Actions</th>
+                                                        <th class="text-center" style="width: 50px;">ID</th>
+                                                        <th class="d-none d-sm-table-cell" style="width:auto;">Name</th>
+                                                        <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                        <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
+                                                        <th class="d-none d-sm-table-cell" style="width:auto;">Mobile</th>
+                                                        <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
+                                                        <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                        <th class="d-none d-sm-table-cell" style="width: 300px;">Notes</th>
+                                                        <th style="width: 5%;"></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
+                                                    @foreach($accounts as $account)
                                                         <tr>
-                                                            <th scope="row">1</th>
-                                                            <td class="font-w600">
-                                                                <a href="be_pages_generic_profile.html">Sara Fields</a>
-                                                            </td>
-                                                            <td class="d-none d-sm-table-cell">
-                                                                <span class="badge badge-warning">Trial</span>
-                                                            </td>
                                                             <td class="text-center">
-                                                                <div class="btn-group">
-                                                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
-                                                                        <i class="fa fa-pencil-alt"></i>
-                                                                    </button>
-                                                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Delete">
-                                                                        <i class="fa fa-times"></i>
-                                                                    </button>
-                                                                </div>
+                                                                @if($accounts->contact_list)
+                                                                {{$accounts->contact_list->f_contact_id}}
+                                                                @endif
+                                                            </td>
+                                                            <td class="font-w600">
+                                                                @if($accounts->contact_list)
+                                                                    {{$accounts->contact_list->f_contact_first_name .' '.$accounts->contact_list->f_contact_last_name}}
+                                                                @endif
+                                                            </td>
+                                                            <td class="font-w600">
+                                                                @if($accounts->contact_list)
+                                                                    {{$accounts->contact_list->f_contact_address_street}}
+                                                                @endif
+                                                            </td>
+                                                            <td class="font-w600">
+
+                                                            </td>
+                                                            <td class="font-w600">
+
+                                                            </td>
+                                                            <td class="font-w600">
+
+                                                            </td>
+                                                            <td class="font-w600">
+
+                                                            </td>
+                                                            <td class="font-w600">
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
-                                        <!-- END Small Table -->
                                     </div>
-                                    <div class="tab-pane" id="btabs-alt-static-activities" role="tabpanel">
-                                        <h4 class="font-w400">Activities Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-invoices" role="tabpanel">
-                                        <h4 class="font-w400">Invoices Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-invoices" role="tabpanel">
-                                        <h4 class="font-w400">Purchases Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-invoices" role="tabpanel">
-                                        <h4 class="font-w400">Locations Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-invoices" role="tabpanel">
-                                        <h4 class="font-w400">Shipping Address Content</h4>
-                                        <p>...</p>
-                                    </div>
-                                    <div class="tab-pane" id="btabs-alt-static-invoices" role="tabpanel">
-                                        <h4 class="font-w400">Billing Groups</h4>
-                                        <p>...</p>
-                                    </div>
-
-
-
-
                                 </div>
                             </div>
+                                    </div>
                     </div>
                 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                         <!-- END Block Tabs Default Style -->
 
-
     <div class="content">
+    </div>
     </div>
 
 @endsection
@@ -324,5 +304,3 @@
 @section('js_after')
 
 @stop
-
-

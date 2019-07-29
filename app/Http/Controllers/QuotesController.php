@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Account;
+use App\Customer;
+use App\Quote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class AccountsController extends Controller
+class QuotesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,15 +16,7 @@ class AccountsController extends Controller
      */
     public function index()
     {
-
-//         $accounts = Account::all();
-
-//         return view('accounts.index');
-
-        $accounts = Account::with('account_type', 'account_status', 'contact_primary')->get();
-
-        return view('accounts.index', compact('accounts'));
-
+        //
     }
 
     /**
@@ -32,7 +26,7 @@ class AccountsController extends Controller
      */
     public function create()
     {
-        //
+        return view('quotes.create');
     }
 
     /**
@@ -43,7 +37,17 @@ class AccountsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $user = Auth::user();
+
+        $customer = Customer::create($request->customer);
+
+        Quote::create($request->quote + ['id' => $user->id] + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
+
+        return 'To be continued';
+
+
+
     }
 
     /**
@@ -54,10 +58,7 @@ class AccountsController extends Controller
      */
     public function show($id)
     {
-
-        $accounts = Account::with('account_type', 'account_status', 'contact_primary', 'contact_list')->get()->find($id);
-
-        return view('accounts.show', compact('accounts'));
+        //
     }
 
     /**
