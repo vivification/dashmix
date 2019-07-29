@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Quote extends Model
@@ -9,6 +10,19 @@ class Quote extends Model
     protected $table = 'f_quotes';
 
     protected $fillable = ['user_id', 'job_number', 'quote_number', 'quote_date', 'customer_id', 'tax_percent', 'status'];
+
+
+    public function user(){
+
+        return $this->belongsTo(User::class);
+
+    }
+
+    public function customer(){
+
+        return $this->belongsTo(Customer::class);
+
+    }
 
     public function getNextOrderNumber()
     {

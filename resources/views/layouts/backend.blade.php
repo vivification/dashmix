@@ -199,9 +199,9 @@
                         </li>
                         <li class="nav-main-heading">Sales & Quotes</li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('quotes') ? ' active' : '' }}" href="/quotes/create">
+                            <a class="nav-main-link{{ request()->is('quotes') ? ' active' : '' }}" href="/quotes">
                                 <i class="nav-main-link-icon si si-credit-card"></i>
-                                <span class="nav-main-link-name">Create Quote</span>
+                                <span class="nav-main-link-name">Quotes</span>
                             </a>
                         </li>
                         <li class="nav-main-heading">More</li>
