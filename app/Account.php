@@ -55,7 +55,11 @@ class Account extends Model
 
     public function contact_list(){
 
-        return $this->hasOne('App\AccountContact', 'f_contact_id', 'id' );
+        // It should be hasMany instead of hasOne
+        // Also you added f_contact_id
+        // So your query was roughly like "Select * from accounts,contact where accounts.id=contact.contact_id (which is totally wrong)
+        // you need to put reference of the key that is the actual foreign key which is `f_contact_reference`
+        return $this->hasMany('App\AccountContact', 'f_contact_reference', 'id' );
 
     }
 

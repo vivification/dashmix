@@ -75,38 +75,10 @@
                         </div>
                         <!-- Block Tabs Default Style -->
                             <div class="block block-rounded block-bordered">
-                                <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#btabs-alt-static-summary">Summary +</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-contacts">Contacts +</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Activities +</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Invoices +</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Purchases +</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Locations +</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Shipping Addresses +</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#btabs-alt-static-activities">Billing Groups +</a>
-                                    </li>
 
-                                </ul>
                                 <div class="block-content tab-content">
                                     <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
-
                                        <div class="row">
-
                                            <div class="col-md-6">
                                                <div class="block block-rounded block-bordered">
                                                    <div class="block-header">
@@ -188,7 +160,6 @@
                                                            </div>
                                                    </div>
                                                </div>
-
                                            </div>
                                            <div class="col-md-6">
                                                <!-- Overlay Map -->
@@ -219,17 +190,17 @@
                                                </div>
                                                <!-- END Overlay Map -->
                                            </div>
-
                                        </div>
-
                                     </div>
                                     <div class="tab-pane" id="btabs-alt-static-contacts" role="tabpanel">
                                         <!-- Dynamic Table Full -->
                                         <div class="block block-rounded block-bordered">
                                             <div class="block-header block-header-default">
-                                                <h3 class="block-title"><i class="far fa-address-book fa-lg"></i> Contacts</h3>
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Contacts
+                                                </h3>
                                             </div>
-                                            <div class="block-content block-content-full">
                                                 <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
                                                 <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
                                                     <thead>
@@ -246,42 +217,41 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($accounts as $account)
-                                                        <tr>
-                                                            <td class="text-center">
-                                                                @if($accounts->contact_list)
-                                                                {{$accounts->contact_list->f_contact_id}}
-                                                                @endif
-                                                            </td>
-                                                            <td class="font-w600">
-                                                                @if($accounts->contact_list)
-                                                                    {{$accounts->contact_list->f_contact_first_name .' '.$accounts->contact_list->f_contact_last_name}}
-                                                                @endif
-                                                            </td>
-                                                            <td class="font-w600">
-                                                                @if($accounts->contact_list)
-                                                                    {{$accounts->contact_list->f_contact_address_street}}
-                                                                @endif
-                                                            </td>
-                                                            <td class="font-w600">
+                                                    <?php
+                                                        // we don't need to use foreach on $accounts because $accounts will always have one account
+                                                        // We need to use foreach for contact list since we will have an array of contacts
+                                                    ?>
+                                                    @if($accounts->contact_list)
+                                                        @foreach($accounts->contact_list as $single_contact)
+                                                            <tr>
+                                                                <td class="text-center">
+                                                                    {{$single_contact->f_contact_id}}
+                                                                </td>
+                                                                <td class="font-w600">
+                                                                    {{$single_contact->f_contact_first_name .' '.$single_contact->f_contact_last_name}}
+                                                                </td>
+                                                                <td class="font-w600">
+                                                                    {{$single_contact->f_contact_address_street}}
+                                                                </td>
+                                                                <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
+                                                                </td>
+                                                                <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
+                                                                </td>
+                                                                <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
+                                                                </td>
+                                                                <td class="font-w600">
 
-                                                            </td>
-                                                            <td class="font-w600">
-                                                            </td>
-                                                        </tr>
+                                                                </td>
+                                                                <td class="font-w600">
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @endif
                                                     </tbody>
-                                                    @endforeach
                                                 </table>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
