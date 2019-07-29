@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Quote;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,10 @@ class QuotesController extends Controller
      */
     public function index()
     {
-        //
+        $quotes = Quote::with('customer', 'user')->get();
+
+        return view('quotes.index', compact('quotes'));
+
     }
 
     /**
@@ -42,9 +46,10 @@ class QuotesController extends Controller
 
         $customer = Customer::create($request->customer);
 
-        Quote::create($request->quote + ['id' => $user->id] + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
+//        Quote::create($request->quote + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
+        Quote::create($request->quote + ['user_id' => $user->id] + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
 
-        return 'To be continued';
+        return redirect('/quotes');
 
 
 

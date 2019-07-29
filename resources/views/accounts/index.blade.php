@@ -19,6 +19,11 @@
 
     <!-- Page Content -->
     <div class="content">
+
+        <div class="row" style="padding-bottom: 30px;">
+            <button class= "btn btn-primary" onclick="window.location.href='/accounts'">Create Account</button>
+        </div>
+
         <div class="row">
 
             <!-- Dynamic Table Full -->
@@ -32,13 +37,13 @@
                         <thead>
                         <tr>
                             <th class="text-center" style="width: 50px;">#</th>
-                            <th class="d-none d-sm-table-cell" style="width: 300px;">Company Name</th>
-                            <th class="d-none d-sm-table-cell" style="width:auto;">Client Type</th>
-                            <th class="d-none d-sm-table-cell" style="width:auto;">Contact</th>
-                            <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
-                            <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
-                            <th class="d-none d-sm-table-cell" style="width:auto;">Website</th>
-                            <th class="d-none d-sm-table-cell" style="width: 300px;">Address</th>
+                            <th class="d-none d-sm-table-cell" >Company Name</th>
+                            <th class="d-none d-sm-table-cell" >Client Type</th>
+                            <th class="d-none d-sm-table-cell" >Contact</th>
+                            <th class="d-none d-sm-table-cell" >Phone</th>
+                            <th class="d-none d-sm-table-cell" >Email</th>
+                            <th class="d-none d-sm-table-cell" >Website</th>
+                            <th class="d-none d-sm-table-cell" >Address</th>
                             <th style="width: 5%;">Status</th>
                         </tr>
                         </thead>

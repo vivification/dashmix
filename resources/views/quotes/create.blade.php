@@ -26,6 +26,11 @@
 
 <div class="content">
 
+    <div class="row" style="padding-bottom: 30px;">
+        <button class= "btn btn-primary" onclick="window.location.href='/quotes'">Back</button>
+    </div>
+
+
     <form action="{{ route('quotes.store') }}" method="post">
         @csrf
 
