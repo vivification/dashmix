@@ -31,8 +31,14 @@ Auth::routes();
         return view('dashboard');
     });
 
-    Route::get('/accounts',             'AccountsController@index')->name('accounts');
+    Route::get('/accounts',              'AccountsController@index')->name('accounts');
     Route::get('/accounts/view/{id}',    'AccountsController@show')->name('accounts.show');
+
+    Route::get('/quotes',                'QuotesController@index')->name('quotes');
+    Route::get('/quotes/create',         'QuotesController@create')->name('quotes.create');
+    Route::get('/quotes/view/{id}',      'QuotesController@show')->name('quotes.show');
+    Route::post('/quotes/store',          'QuotesController@store')->name('quotes.store');
+
 
 
 

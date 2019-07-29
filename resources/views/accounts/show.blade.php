@@ -276,15 +276,26 @@
 
                                                             </td>
                                                             <td class="font-w600">
-
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                                    </div>
                     </div>
                 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                         <!-- END Block Tabs Default Style -->
 
-
     <div class="content">
+    </div>
     </div>
 
 @endsection
@@ -293,5 +304,3 @@
 @section('js_after')
 
 @stop
-
-
