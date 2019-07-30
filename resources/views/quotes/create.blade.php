@@ -92,7 +92,7 @@
 
         <div class="row clearfix">
             <div class="col-md-12">
-                <button id="add_row" class="btn btn-primary float-left">Add Row</button>
+                <button id="add_row" type="button" class="btn btn-primary float-left">Add Row</button>
                 <button id='delete_row' class="btn btn-info float-right">Delete Row</button>
             </div>
         </div>
@@ -132,13 +132,14 @@
 </div>
 
 @endsection
-
-@section('javascript')
+{{--no section exist with the name javascript --}}
+@section('js_after')
     <script>
         $(document).ready(function(){
             var i=1;
             $("#add_row").click(function()
-            {b=i-1;
+            {
+                b=i-1;
                 $('#addr'+i).html($('#addr'+b).html()).find('td:first-child').html(i+1);
                 $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
                 i++;
