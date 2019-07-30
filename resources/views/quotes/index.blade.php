@@ -36,36 +36,44 @@
                         <tr>
                             <th class="text-center" style="width: 50px;">#</th>
                             <th class="d-none d-sm-table-cell">Quote Number</th>
-                            <th class="d-none d-sm-table-cell">Job Number</th>
-                            <th class="d-none d-sm-table-cell">Quote Date</th>
                             <th class="d-none d-sm-table-cell">Customer</th>
-                            <th class="d-none d-sm-table-cell">Tax Percent</th>
+                            <th class="d-none d-sm-table-cell">Job Number</th>
+                            <th class="d-none d-sm-table-cell">Description</th>
+                            <th class="d-none d-sm-table-cell">Quote Date</th>
+                            <th class="d-none d-sm-table-cell">Total Amount</th>
                             <th class="d-none d-sm-table-cell">Status</th>
-                            <th class="d-none d-sm-table-cell">Created</th>
+                            <th class="d-none d-sm-table-cell">Created By</th>
+                            <th class="d-none d-sm-table-cell">Created On</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($quotes as $quote)
                         <tr>
                             <td class="text-center">
-                                <a href="accounts/view/{{$quote->id}}">{{$quote->id}}</a></td>
+                                <a href="quotes/view/{{$quote->id}}">{{$quote->id}}</a></td>
                             <td class="font-w600">
-                                <a href="accounts/view/{{$quote->id}}">{{$quote->quote_number}}</a>
+                                <a href="quotes/view/{{$quote->id}}">{{$quote->quote_number}}</a>
+                            </td>
+                            <td class="font-w600">
+                                {{$quote->customer->companyname}}
                             </td>
                             <td class="font-w600">
                                 {{$quote->job_number}}
                             </td>
                             <td class="font-w600">
+                                Need to bring this in on Model!
+                            </td>
+                            <td class="font-w600">
                                 {{$quote->quote_date}}
                             </td>
                             <td class="font-w600">
-                                {{$quote->customer_id}}
-                            </td>
-                            <td class="font-w600">
-                                {{$quote->tax_percent}}
+                                ${{number_format($quote->total_amount, 2)}}
                             </td>
                             <td class="font-w600">
                                 {{$quote->status}}
+                            </td>
+                            <td class="font-w600">
+                                {{$quote->user->name }}
                             </td>
                             <td class="font-w600">
                                 {{$quote->created_at}}
