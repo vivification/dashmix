@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Quote;
-
 use App\QuoteItems;
-use App\QuotesItem;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -115,4 +114,16 @@ class QuotesController extends Controller
     {
         //
     }
+
+    public function download($quote_id){
+        //
+        $quote  = Quote::findorFail($quote_id);
+
+        $pdf    = \PDF::loadView('quotes.pdf', compact('quote'));
+        return $pdf->stream('quote.pdf');
+
+
+
+    }
+
 }

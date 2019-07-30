@@ -45,10 +45,31 @@
                             <div class="block block-rounded block-bordered">
                                 <div class="block-content tab-content">
                                     <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
-                                        <div class="row">
-{{--                                            <b>Quote Created:</b> {{ $quote->quote_date }}<br>--}}
-{{--                                            <b>Created by:</b> {{$quote->user->name}}--}}
-                                            <div class="container">
+
+                                        <div class="row" style="padding-bottom: 30px; padding-left: 30px;">
+                                            <a href="{{ route('quotes.download', $quote->id) }}" class="btn btn-sm btn-info">View PDF</a>
+                                        </div>
+
+                                        <div class="row" style="padding-bottom: 30px; padding-left: 30px;">
+                                            <table class="tg" style="table-layout: fixed; width: 277px;">
+                                                <colgroup>
+                                                    <col style="width: 120px">
+                                                    <col style="width: 20px">
+                                                    <col style="width: 120px">
+                                                </colgroup>
+                                                <tr>
+                                                    <th class="tg-0pky">Quote Created:</th>
+                                                    <th class="tg-0pky"></th>
+                                                    <th class="tg-0pky">{{ $quote->quote_date }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tg-0pky">Created By</td>
+                                                    <td class="tg-0pky"></td>
+                                                    <td class="tg-0pky">{{$quote->user->name}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                            <div class="container" style="border: 2px solid #e6ebf4; border-radius:25px; ">
                                                 <div class="row clearfix" style="margin-top:20px">
                                                     <div class="col-md-12">
                                                         <div class="float-left col-md-6" style="font-size:14px;" >
@@ -56,7 +77,7 @@
                                                             <b>Quote Number: {{$quote->quote_number}}</b>
                                                             <br>
                                                             <br>
-                                                            <b>To:</b>          {{ucfirst(trans($quote->customer->name))}}
+                                                            <b>Attention:</b>          {{ucfirst(trans($quote->customer->name))}}
                                                             <br>
                                                             <b>Address:</b>     {{ $quote->customer->address }}
                                                             <br>
@@ -68,7 +89,11 @@
                                                             <br>
                                                             <b>Country:</b>     {{ $quote->customer->country }}
                                                             <br>
-                                                            <b>Phone:</b>       {{ $quote->customer->phone }}
+                                                                @if(!empty($quote->customer->phone))
+                                                                ''
+                                                                @else
+                                                                    <b>Phone:</b> {{ $quote->customer->phone }}
+                                                                @endif
                                                             <br>
                                                             <b>Email:</b>       {{ $quote->customer->email }}
 
@@ -79,21 +104,25 @@
                                                             @endif
 
                                                         </div>
-                                                        {{--                <div class="float-right col-md-4">--}}
-                                                        {{--                    <b>From</b>: {{ config('quotes.seller.name') }}--}}
-                                                        {{--                    <br>--}}
-                                                        {{--                    <b>Address</b>: {{ config('quotes.seller.address') }}--}}
-                                                        {{--                    <br>--}}
-                                                        {{--                    @if (config('quotes.seller.email') != '')--}}
-                                                        {{--                        <b>Email</b>: {{ config('quotes.seller.email') }}--}}
-                                                        {{--                    @endif--}}
-                                                        {{--                    @if (is_array(config('quotes.seller.additional_info')))--}}
-                                                        {{--                        @foreach (config('quotes.seller.additional_info') as $key => $value)--}}
-                                                        {{--                            <br /><br />--}}
-                                                        {{--                            <b>{{ $key }}</b>: {{ $value }}--}}
-                                                        {{--                        @endforeach--}}
-                                                        {{--                    @endif--}}
-                                                        {{--                </div>--}}
+                                                                        <div class="float-right col-md-4" style="text-align: right;">
+                                                                            <img src="{{ config('quotes.logo_file') }}" width="100px" />
+                                                                            <br>
+                                                                            <b>{{ config('quotes.seller.name') }}</b>
+                                                                            <br>
+                                                                            {{ config('quotes.seller.address_1') }}
+                                                                            <br>
+                                                                            {{ config('quotes.seller.address_2') }}
+                                                                            <br>
+                                                                            @if (config('quotes.seller.email') != '')
+                                                                                <b>Email</b>: {{ config('quotes.seller.email') }}
+                                                                            @endif
+                                                                            @if (is_array(config('quotes.seller.additional_info')))
+                                                                                @foreach (config('quotes.seller.additional_info') as $key => $value)
+                                                                                    <br /><br />
+                                                                                    <b>{{ $key }}</b>: {{ $value }}
+                                                                                @endforeach
+                                                                            @endif
+                                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -102,12 +131,12 @@
                                                         <table class="table table-bordered table-hover" id="tab_logic">
                                                             <thead>
                                                             <tr>
-                                                                <th class="text-center"> # </th>
-                                                                <th class="text-center"> Product </th>
-                                                                <th class="text-center"> Description </th>
-                                                                <th class="text-center"> Qty </th>
-                                                                <th class="text-center"> Price </th>
-                                                                <th class="text-center"> Total </th>
+                                                                <th > # </th>
+                                                                <th > Product </th>
+                                                                <th > Description </th>
+                                                                <th > Qty </th>
+                                                                <th > Price </th>
+                                                                <th > Total </th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -153,7 +182,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+
                                     </div>
 
                                     <div class="tab-pane" id="btabs-alt-static-notes" role="tabpanel">
