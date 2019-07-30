@@ -46,11 +46,11 @@
                                 <div class="block-content tab-content">
                                     <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
 
-                                        <div class="row" style="padding-bottom: 30px; padding-left: 30px;">
+                                        <div class="row" style="padding-bottom: 30px; padding-left: 30px; ">
                                             <a href="{{ route('quotes.download', $quote->id) }}" class="btn btn-sm btn-info">View PDF</a>
                                         </div>
 
-                                        <div class="row" style="padding-bottom: 30px; padding-left: 30px;">
+                                        <div class="row" style="padding-bottom: 30px; padding-left: 30px; ">
                                             <table class="tg" style="table-layout: fixed; width: 277px;">
                                                 <colgroup>
                                                     <col style="width: 120px">
@@ -69,6 +69,7 @@
                                                 </tr>
                                             </table>
                                         </div>
+
                                             <div class="container" style="border: 2px solid #e6ebf4; border-radius:25px; ">
                                                 <div class="row clearfix" style="margin-top:20px">
                                                     <div class="col-md-12">
@@ -79,23 +80,30 @@
                                                             <br>
                                                             <b>Attention:</b>          {{ucfirst(trans($quote->customer->name))}}
                                                             <br>
-                                                            <b>Address:</b>     {{ $quote->customer->address }}
+                                                            {{ ucwords(trans($quote->customer->address)) }}
                                                             <br>
-                                                            <b>City:</b>        {{ $quote->customer->city }}
+                                                             {{ $quote->customer->city . ', ' .$quote->customer->state }}
                                                             <br>
-                                                            <b>State:</b>       {{ $quote->customer->state }}
+                                                            {{ $quote->customer->postcode }}
                                                             <br>
-                                                            <b>Postcode:</b>    {{ $quote->customer->postcode }}
+                                                            {{ $quote->customer->country }}
                                                             <br>
-                                                            <b>Country:</b>     {{ $quote->customer->country }}
                                                             <br>
-                                                                @if(!empty($quote->customer->phone))
-                                                                ''
-                                                                @else
-                                                                    <b>Phone:</b> {{ $quote->customer->phone }}
-                                                                @endif
+                                                            @if (!empty($quote->customer->phone))
+                                                            <!-- If NOT empty, show phone -->
+                                                                <b>Phone:</b> {{ $quote->customer->phone }}
+                                                            @else
+                                                            <!-- Else (if empty) show nothing / do something else -->
+
+                                                            @endif
                                                             <br>
-                                                            <b>Email:</b>       {{ $quote->customer->email }}
+                                                            @if (!empty($quote->customer->email))
+                                                            <!-- If NOT empty, show phone -->
+                                                                <b>Email:</b> {{ $quote->customer->email }}
+                                                            @else
+                                                            <!-- Else (if empty) show nothing / do something else -->
+
+                                                            @endif
 
                                                             @if ($quote->customer->customer_fields)
                                                                 @foreach ($quote->customer->customer_fields as $field)
@@ -157,7 +165,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row clearfix" style="margin-top:20px">
+                                                <div class="clearfix" style="margin-top:20px">
                                                     <div class="float-right col-md-3">
                                                         <table class="table table-bordered table-hover" id="tab_logic_total">
                                                             <tbody>
