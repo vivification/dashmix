@@ -24,6 +24,21 @@ class Quote extends Model
 
     }
 
+    public function quote_items(){
+
+        return $this->hasMany(QuoteItems::class);
+    }
+
+    public function  getTotalAmountAttribute(){
+
+        $total_amount = 0;
+        foreach ($this->quote_items as $item) {
+            $total_amount += $item->price * $item->quantity;
+        }
+        return $total_amount;
+
+    }
+
     public function getNextOrderNumber()
     {
         // Get the last created order

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Quote;
+use App\QuoteItems;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,8 +47,20 @@ class QuotesController extends Controller
 
         $customer = Customer::create($request->customer);
 
-//        Quote::create($request->quote + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
-        Quote::create($request->quote + ['user_id' => $user->id] + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
+        $quote = Quote::create($request->quote + ['user_id' => $user->id] + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
+
+        for ($i=0; $i < count($request->product); $i++) {
+            if (isset($request->qty[$i]) && isset($request->price[$i])) {
+                QuoteItems::create([
+                    'quote_id' => $quote->id,
+                    'name' => $request->product[$i],
+                    'description' => $request->description[$i],
+                    'quantity' => $request->qty[$i],
+                    'price' => $request->price[$i],
+                ]);
+            }
+
+        }
 
         return redirect('/quotes');
 
@@ -61,9 +74,11 @@ class QuotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($quote_id)
     {
-        //
+        $quote = Quote::with('customer', 'user')->findOrFail($quote_id);
+
+        return view('quotes.show', compact('quote'));
     }
 
     /**
@@ -99,4 +114,16 @@ class QuotesController extends Controller
     {
         //
     }
+
+    public function download($quote_id){
+        //
+        $quote  = Quote::findorFail($quote_id);
+
+        $pdf    = \PDF::loadView('quotes.pdf', compact('quote'));
+        return $pdf->stream('quote.pdf');
+
+
+
+    }
+
 }

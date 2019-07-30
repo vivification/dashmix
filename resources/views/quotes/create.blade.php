@@ -36,13 +36,15 @@
 
     <div class="row">
         <div class="col-md-3">
-            Quote Number:
-            <br>
-            <input type="text" name='quote[quote_number]' class="form-control" placeholder="RTQ" required />
+{{--            Quote Number:--}}
+{{--            <br>--}}
+{{--            <input type="text" name='quote[quote_number]' class="form-control" placeholder="RTQ" required />--}}
             Quote Date:
             <br>
             <input type="text" name='quote[quote_date]' class="form-control" value="{{ date('Y-m-d') }}" required />
+            Job Number:
             <br>
+            <input type="text" name='quote[job_number]' class="form-control" />
         </div>
     </div>
 
@@ -67,6 +69,7 @@
                     <tr>
                         <th class="text-center"> # </th>
                         <th class="text-center"> Product </th>
+                        <th class="text-center"> Description </th>
                         <th class="text-center"> Qty </th>
                         <th class="text-center"> Price </th>
                         <th class="text-center"> Total </th>
@@ -76,6 +79,7 @@
                     <tr id='addr0'>
                         <td>1</td>
                         <td><input type="text" name='product[]'  placeholder='Enter Product Name' class="form-control"/></td>
+                        <td><input type="text" name='description[]'  placeholder='Product Description' class="form-control"/></td>
                         <td><input type="number" name='qty[]' placeholder='Enter Qty' class="form-control qty" step="0" min="0"/></td>
                         <td><input type="number" name='price[]' placeholder='Enter Unit Price' class="form-control price" step="0.00" min="0"/></td>
                         <td><input type="number" name='total[]' placeholder='0.00' class="form-control total" readonly/></td>
@@ -129,11 +133,12 @@
 
 @endsection
 
-@section('js_after')
+@section('javascript')
     <script>
         $(document).ready(function(){
             var i=1;
-            $("#add_row").click(function(){b=i-1;
+            $("#add_row").click(function()
+            {b=i-1;
                 $('#addr'+i).html($('#addr'+b).html()).find('td:first-child').html(i+1);
                 $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
                 i++;

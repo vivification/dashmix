@@ -37,7 +37,8 @@ Auth::routes();
     Route::get('/quotes',                'QuotesController@index')->name('quotes');
     Route::get('/quotes/create',         'QuotesController@create')->name('quotes.create');
     Route::get('/quotes/view/{id}',      'QuotesController@show')->name('quotes.show');
-    Route::post('/quotes/store',          'QuotesController@store')->name('quotes.store');
+    Route::post('/quotes/store',         'QuotesController@store')->name('quotes.store');
+    Route::get('/quotes/{id}/download', 'QuotesController@download')->name('quotes.download');
 
 
 

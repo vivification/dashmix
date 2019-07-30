@@ -245,6 +245,180 @@
                                             </table>
                                         </div>
                                     </div>
+                                    <div class="tab-pane" id="btabs-alt-static-notes" role="tabpanel">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Notes
+                                                </h3>
+                                            </div>
+                                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width: 50px;">ID</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Name</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Mobile</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width: 300px;">Notes</th>
+                                                    <th style="width: 5%;"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="btabs-alt-static-invoices" role="tabpanel">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Invoices
+                                                </h3>
+                                            </div>
+                                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width: 50px;">ID</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Name</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Mobile</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width: 300px;">Notes</th>
+                                                    <th style="width: 5%;"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="btabs-alt-static-purchases" role="tabpanel">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Purchases
+                                                </h3>
+                                            </div>
+                                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width: 50px;">ID</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Name</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Mobile</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width: 300px;">Notes</th>
+                                                    <th style="width: 5%;"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="btabs-alt-static-locations" role="tabpanel">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Locations
+                                                </h3>
+                                            </div>
+                                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width: 50px;">ID</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Name</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Mobile</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width: 300px;">Notes</th>
+                                                    <th style="width: 5%;"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="btabs-alt-static-shipping" role="tabpanel">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Shipping Addresses
+                                                </h3>
+                                            </div>
+                                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width: 50px;">ID</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Name</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Mobile</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width: 300px;">Notes</th>
+                                                    <th style="width: 5%;"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="btabs-alt-static-billing" role="tabpanel">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Billing Groups
+                                                </h3>
+                                            </div>
+                                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width: 50px;">ID</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Name</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Phone</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Mobile</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Email</th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;">Address</th>
+                                                    <th class="d-none d-sm-table-cell" style="width: 300px;">Notes</th>
+                                                    <th style="width: 5%;"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
