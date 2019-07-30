@@ -119,6 +119,8 @@ class QuotesController extends Controller
         //
         $quote  = Quote::findorFail($quote_id);
 
+        return view('quotes.pdf', compact('quote'));
+
         $pdf    = \PDF::loadView('quotes.pdf', compact('quote'));
         return $pdf->stream('quote.pdf');
 

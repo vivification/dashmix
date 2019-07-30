@@ -23,14 +23,28 @@
         <br>
         <b>Country:</b>     {{ $quote->customer->country }}
         <br>
-        <b>Phone:</b>       {{ $quote->customer->phone }}
+        @if (!empty($quote->customer->phone))
+            <!-- If NOT empty, show phone -->
+                <b>Phone:</b> {{ $quote->customer->phone }}
+            @else
+            <!-- Else (if empty) show nothing / do something else -->
+
+        @endif
         <br>
-        <b>Email:</b>       {{ $quote->customer->email }}
+        @if (!empty($quote->customer->email))
+        <!-- If NOT empty, show phone -->
+            <b>Email:</b> {{ $quote->customer->email }}
+        @else
+        <!-- Else (if empty) show nothing / do something else -->
+
+        @endif
+        <br>
+        <br>
     </div>
 
 </div>
 
-<div class="clearfix mt-3">
+<div class="col-md-12">
     <br>
     <table class="table table-bordered">
         <thead>
@@ -58,9 +72,9 @@
     </table>
 </div>
 
-<div class="clearfix mt-3" style="float: right;">
-    <div class="col-md-3">
-        <table class="table table-bordered table-hover" id="tab_logic_total" style="table-layout: fixed; width: 277px;">
+<div class="col-sm-3" style="float: right; width: 300px;">
+    <div style="float: right; width: 300px;">
+        <table class="table table-bordered table-hover" id="tab_logic_total">
             <tbody>
             <colgroup>
                 <col style="width: 120px">
@@ -88,6 +102,7 @@
         </table>
     </div>
 </div>
+
 <div class="clearfix mt-3">
     {{ config('quote.footer_text') }}
 </div>
