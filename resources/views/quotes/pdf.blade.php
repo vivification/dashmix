@@ -72,9 +72,9 @@
     </table>
 </div>
 
-<div class="col-sm-3" style="float: right; width: 300px;">
-    <div style="float: right; width: 300px;">
-        <table class="table table-bordered table-hover" id="tab_logic_total">
+<div style="position: relative;">
+    <div style="width: 300px; position: absolute;right: 0;">
+        <table class="table table-bordered table-hover">
             <tbody>
             <colgroup>
                 <col style="width: 120px">
