@@ -10,6 +10,8 @@ class AccountType extends Model
 
     public $primaryKey = 'f_account_type_id';
 
+    protected $fillable = ['f_account_type_name'];
+
     public function account(){
 
         // Needs to return relation

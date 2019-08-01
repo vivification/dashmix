@@ -9,7 +9,7 @@ class Quote extends Model
 {
     protected $table = 'f_quotes';
 
-    protected $fillable = ['user_id', 'job_number', 'quote_number', 'quote_date', 'customer_id', 'tax_percent', 'status'];
+    protected $fillable = ['user_id', 'job_number', 'description', 'quote_number', 'quote_date', 'customer_id', 'tax_percent', 'status', 'terms'];
 
 
     public function user(){
@@ -50,7 +50,7 @@ class Quote extends Model
 
             $number = 0;
         else
-            $number = substr($lastOrder->order_id, 3);
+            $number = substr($lastOrder->quote_number, 3);
 
         // If we have ORD000001 in the database then we only want the number
         // So the substr returns this 000001

@@ -20,7 +20,7 @@ class CreateFQuotesTable extends Migration
             $table->string('job_number')->nullable();
             $table->date('quote_date');
             $table->integer('customer_id')->unsigned(); //reference to customer_id (foreign key)
-            $table->foreign('customer_id')->references('id')->on('f_customers');
+            $table->foreign('customer_id')->references('id')->on('f_customers')->onDelete('cascade');
             $table->decimal('tax_percent')->default(0);
             $table->string('status');
             $table->timestamps();

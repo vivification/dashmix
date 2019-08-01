@@ -6,6 +6,7 @@ use App\Customer;
 use App\Quote;
 use App\QuoteItems;
 
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,12 +43,11 @@ class QuotesController extends Controller
      */
     public function store(Request $request)
     {
-
-        $user = Auth::user();
+        $userId = Auth::id();
 
         $customer = Customer::create($request->customer);
 
-        $quote = Quote::create($request->quote + ['user_id' => $user->id] + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
+        $quote = Quote::create($request->quote + ['user_id' => $userId] + ['customer_id' => $customer->id] + ['quote_number' => (new Quote)->getNextOrderNumber()] + ['status' => 'Unapproved']);
 
         for ($i=0; $i < count($request->product); $i++) {
             if (isset($request->qty[$i]) && isset($request->price[$i])) {
@@ -112,12 +112,17 @@ class QuotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $quote = Quote::findOrFail($id);
+
+        $quote->delete();
+
+        return redirect('/quotes');
+
     }
 
     public function download($quote_id){
         //
-        $quote  = Quote::findorFail($quote_id);
+        $quote  = Quote::findOrFail($quote_id);
 
         //return view('quotes.pdf', compact('quote'));
 

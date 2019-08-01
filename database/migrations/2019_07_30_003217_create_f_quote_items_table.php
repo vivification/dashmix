@@ -16,7 +16,7 @@ class CreateFQuoteItemsTable extends Migration
         Schema::create('f_quotes_items', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('quote_id')->unsigned();
-            $table->foreign('quote_id')->references('id')->on('f_quotes');
+            $table->foreign('quote_id')->references('id')->on('f_quotes')->onDelete('cascade');
             $table->string('name');
             $table->string('description');
             $table->decimal('quantity');

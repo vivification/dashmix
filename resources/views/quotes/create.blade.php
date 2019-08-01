@@ -2,137 +2,213 @@
 
 @section('content')
 
+    <div class="content">
+        <div class="col-md-12">
+            <div class="block block-themed bg-image">
+                <div class="block-header bg-primary-dark-op">
+                    <h2 class="block-title"><i class="far fa-address-card fa-lg"></i> Create New Quote</h2>
+                    <div class="block-options">
+                        {{--                        <button type="button" class="btn btn-success">--}}
+                        {{--                            @if($accounts->account_status)--}}
+                        {{--                                {{$accounts->account_status->f_account_status_name}}--}}
+                        {{--                            @endif--}}
+                        {{--                        </button>--}}
+                    </div>
+                </div>
 
-{{--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--}}
-{{--    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>--}}
-{{--    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--}}
-    <!------ Include the above in your HEAD tag ---------->
+                <!-- Block Tabs -->
+                <div class="row">
+                    <div class="col-lg-12 accounts-wrapper">
 
-<div class="bg-body-light">
-    <div class="content content-full">
-        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-            <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Create New Quote</h1>
-            <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">App</li>
-                    <li class="breadcrumb-item active" aria-current="page">Quote</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-</div>
+                        <!-- Block Tabs Default Style -->
+                        <div class="block block-rounded block-bordered">
+                            <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#btabs-alt-static-summary">New Customer</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#btabs-alt-static-contacts">Existing Customer</a>
+                                </li>
+                            </ul>
+                            <div class="block block-rounded block-bordered">
+                                <div class="block-content tab-content">
+                                    <div class="tab-pane active" id="btabs-alt-static-summary" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <form action="{{ route('quotes.store') }}" method="post">
+                                                    @csrf
+                                                <div class="block block-rounded block-bordered">
+                                                    <div class="block-header">
+                                                        <h3 class="block-title"><i
+                                                                    class="far fa-address-card fa-lg"></i> Customer
+                                                            Details </h3>
+                                                    </div>
+                                                    <div class="block-content">
+                                                        <div class="form-group">
+                                                            <label type="text" name="name">Company Name:</label>
+                                                            <input type="text" name='customer[companyname]'
+                                                                   class="form-control" required/>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 form-group">
+                                                                <label type="text" name="name">Customer Name:</label>
+                                                                <input type="text" name='customer[name]'
+                                                                       class="form-control" required/>
+                                                            </div>
+                                                            <div class="col-md-6 form-group">
+                                                                <label type="text" name="name">Email:</label>
+                                                                <input type="email" name='customer[email]'
+                                                                       class="form-control"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label type="text" name="name">Street Address:</label>
+                                                            <input type="text" name='customer[address]'
+                                                                   class="form-control" required/>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 form-group">
+                                                                <label type="text" name="name">City:</label>
+                                                                <input type="text" name='customer[city]'
+                                                                       class="form-control"/>
+                                                            </div>
+                                                            <div class="col-md-6 form-group">
+                                                                <label type="text" name="name">State:</label>
+                                                                <input type="text" name='customer[state]'
+                                                                       class="form-control"/>
+                                                            </div>
+                                                            <div class="col-md-6 form-group">
+                                                                <label type="text" name="name">Postcode:</label>
+                                                                <input type="text" name='customer[postcode]'
+                                                                       class="form-control"/>
+                                                            </div>
+                                                            <div class="col-md-6 form-group">
+                                                                <label type="text" name="name">Country:</label>
+                                                                <input type="text" name='customer[country]'
+                                                                       class="form-control"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
+                                                <div class="block block-rounded block-bordered">
+                                                    <div class="block-header">
+                                                        <h3 class="block-title"><i class="far fa-credit-card fa-lg"></i>
+                                                            Quote Details</h3>
+                                                    </div>
+                                                    <div class="block-content">
+                                                        <div class="row">
+                                                            <div class="col-md-3 form-group">
+                                                                <label type="text" name="name">Quote Date:</label>
+                                                                <input type="text" name='quote[quote_date]' class="form-control" value="{{ date('Y-m-d') }}" required/>
+                                                            </div>
+                                                            <div class="col-md-3 form-group">
+                                                                <label type="text" name="name">Quote Terms:</label>
+                                                                <input type="text" name='quote[terms]' class="form-control" required/>
+                                                            </div>
+                                                            <div class="col-md-3 form-group">
+                                                                <label type="text" name="name">Job Number:</label>
+                                                                <input type="text" name='quote[job_number]' class="form-control" required/>
+                                                            </div>
+                                                            <div class="col-md-3 form-group">
+                                                                <label type="text" name="name">Description:</label>
+                                                                <input type="text" name='quote[description]' class="form-control" required/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
+                                                <div class="block block-rounded block-bordered">
+                                                    <div class="block-header">
+                                                        <h3 class="block-title"><i class="far fa-credit-card fa-lg"></i>
+                                                            Charges</h3>
+                                                    </div>
+                                                    <div class="block-content">
+                                                        <div class="row">
 
-<div class="content">
+                                                            <div class="col-md-12" style="padding-top: 30px;">
+                                                                <table class="table table-bordered table-hover" id="tab_logic">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th class="text-center"> # </th>
+                                                                        <th class="text-center"> Product </th>
+                                                                        <th class="text-center"> Description </th>
+                                                                        <th class="text-center"> Qty </th>
+                                                                        <th class="text-center"> Price </th>
+                                                                        <th class="text-center"> Total </th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr id='addr0'>
+                                                                        <td>1</td>
+                                                                        <td><input type="text" name='product[]'  placeholder='Enter Product Name' class="form-control"/></td>
+                                                                        <td><input type="text" name='description[]'  placeholder='Product Description' class="form-control"/></td>
+                                                                        <td><input type="number" name='qty[]' placeholder='Enter Qty' class="form-control qty" step="0" min="0"/></td>
+                                                                        <td><input type="number" name='price[]' placeholder='Enter Unit Price' class="form-control price" step="0.00" min="0"/></td>
+                                                                        <td><input type="number" name='total[]' placeholder='0.00' class="form-control total" readonly/></td>
+                                                                    </tr>
+                                                                    <tr id='addr1'></tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
 
-    <div class="row" style="padding-bottom: 30px;">
-        <button class= "btn btn-primary" onclick="window.location.href='/quotes'">Back</button>
-    </div>
+                                                        <div class="row clearfix">
+                                                            <div class="col-md-12">
+                                                                <button id="add_row" type="button" class="btn btn-primary float-left">Add Row</button>
+                                                                <button id='delete_row' class="btn btn-info float-right">Delete Row</button>
+                                                            </div>
+                                                        </div>
 
-
-    <form action="{{ route('quotes.store') }}" method="post">
-        @csrf
-
-    <div class="row">
-        <div class="col-md-3">
-{{--            Quote Number:--}}
-{{--            <br>--}}
-{{--            <input type="text" name='quote[quote_number]' class="form-control" placeholder="RTQ" required />--}}
-            Quote Date:
-            <br>
-            <input type="text" name='quote[quote_date]' class="form-control" value="{{ date('Y-m-d') }}" required />
-            Job Number:
-            <br>
-            <input type="text" name='quote[job_number]' class="form-control" />
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row clearfix">
-            <div class="col-md-6" style="margin-top:20px">
-                Company Name*: <input type="text" name='customer[companyname]' class="form-control" required />
-                Name*: <input type="text" name='customer[name]' class="form-control" required />
-                Address*: <input type="text" name='customer[address]' class="form-control" required />
-                Postcode/ZIP: <input type="text" name='customer[postcode]' class="form-control" />
-                City*: <input type="text" name='customer[city]' class="form-control" required />
-                State: <input type="text" name='customer[state]' class="form-control" />
-                Country*: <input type="text" name='customer[country]' class="form-control" required />
-                Phone: <input type="text" name='customer[phone]' class="form-control" />
-                Email: <input type="email" name='customer[email]' class="form-control" />
-                <br />
-            </div>
-
-            <div class="col-md-12" style="padding-top: 30px;">
-                <table class="table table-bordered table-hover" id="tab_logic">
-                    <thead>
-                    <tr>
-                        <th class="text-center"> # </th>
-                        <th class="text-center"> Product </th>
-                        <th class="text-center"> Description </th>
-                        <th class="text-center"> Qty </th>
-                        <th class="text-center"> Price </th>
-                        <th class="text-center"> Total </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr id='addr0'>
-                        <td>1</td>
-                        <td><input type="text" name='product[]'  placeholder='Enter Product Name' class="form-control"/></td>
-                        <td><input type="text" name='description[]'  placeholder='Product Description' class="form-control"/></td>
-                        <td><input type="number" name='qty[]' placeholder='Enter Qty' class="form-control qty" step="0" min="0"/></td>
-                        <td><input type="number" name='price[]' placeholder='Enter Unit Price' class="form-control price" step="0.00" min="0"/></td>
-                        <td><input type="number" name='total[]' placeholder='0.00' class="form-control total" readonly/></td>
-                    </tr>
-                    <tr id='addr1'></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="row clearfix">
-            <div class="col-md-12">
-                <button id="add_row" type="button" class="btn btn-primary float-left">Add Row</button>
-                <button id='delete_row' class="btn btn-info float-right">Delete Row</button>
-            </div>
-        </div>
-
-        <div class="row clearfix" style="margin-top:20px">
-            <div class="col-md-12">
-                <div class="float-right col-md-4">
-                    <table class="table table-bordered table-hover" id="tab_logic_total">
-                        <tbody>
-                        <tr>
-                            <th class="text-center">Sub Total</th>
-                            <td class="text-center"><input type="number" name='sub_total' placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
-                        </tr>
-                        <tr>
-                            <th class="text-center">Tax</th>
-                            <td class="text-center"><div class="input-group mb-2 mb-sm-0">
-                                    <input type="number" class="form-control" id="tax" placeholder="0" name="quote[tax_percent]">
-                                    <div class="input-group-addon">%</div>
-                                </div></td>
-                        </tr>
-                        <tr>
-                            <th class="text-center">Tax Amount</th>
-                            <td class="text-center"><input type="number" name='tax_amount' id="tax_amount" placeholder='0.00' class="form-control" readonly/></td>
-                        </tr>
-                        <tr>
-                            <th class="text-center">Grand Total</th>
-                            <td class="text-center"><input type="number" name='total_amount' id="total_amount" placeholder='0.00' class="form-control" readonly/></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                                                        <div class="row clearfix" style="margin-top:20px">
+                                                            <div class="col-md-12">
+                                                                <div class="float-right col-md-4">
+                                                                    <table class="table table-bordered table-hover" id="tab_logic_total">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <th class="text-center">Sub Total</th>
+                                                                            <td class="text-center"><input type="number" name='sub_total' placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th class="text-center">Tax</th>
+                                                                            <td class="text-center"><div class="input-group mb-2 mb-sm-0">
+                                                                                    <input type="number" class="form-control" id="tax" placeholder="0" name="quote[tax_percent]">
+                                                                                    <div class="input-group-addon">%</div>
+                                                                                </div></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th class="text-center">Tax Amount</th>
+                                                                            <td class="text-center"><input type="number" name='tax_amount' id="tax_amount" placeholder='0.00' class="form-control" readonly/></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th class="text-center">Grand Total</th>
+                                                                            <td class="text-center"><input type="number" name='total_amount' id="total_amount" placeholder='0.00' class="form-control" readonly/></td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <input type="submit" class="btn btn-primary" value="Save Quote" />
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary" value="Save Quote" />
         </div>
     </div>
-    </form>
-</div>
+
+    <div class="content">
+    </div>
 
 @endsection
-{{--no section exist with the name javascript --}}
 @section('js_after')
     <script>
         $(document).ready(function(){
@@ -189,4 +265,8 @@
             $('#total_amount').val((tax_sum+total).toFixed(2));
         }
     </script>
+@stop
+
+@section('js_after')
+
 @stop

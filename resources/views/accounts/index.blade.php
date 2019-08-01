@@ -21,7 +21,7 @@
     <div class="content">
 
         <div class="row" style="padding-bottom: 30px;">
-            <button class= "btn btn-primary" onclick="window.location.href='/accounts'">Create Account</button>
+            <button class= "btn btn-primary" onclick="window.location.href='/accounts/create'">Create Account</button>
         </div>
 
         <div class="row">
