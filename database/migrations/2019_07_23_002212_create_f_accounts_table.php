@@ -28,8 +28,8 @@ class CreateFAccountsTable extends Migration
             $table->integer('f_account_currency')->nullable();
             $table->integer('f_account_terms')->nullable();
             $table->integer('f_account_area_manager')->nullable();
-            $table->string('f_account_address_street');
-            $table->string('f_account_address_street_locale');
+            $table->string('f_account_address_street')->nullable();
+            $table->string('f_account_address_street_locale')->nullable();
             $table->string('f_account_address_mailing')->nullable();
             $table->string('f_account_address_mailing_locale')->nullable();
             $table->integer('f_account_status')->nullable();

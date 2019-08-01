@@ -61,7 +61,7 @@
                                 {{$quote->job_number}}
                             </td>
                             <td class="font-w600">
-                                Need to bring this in on Model!
+                                {{$quote->description}}
                             </td>
                             <td class="font-w600">
                                 {{$quote->quote_date}}

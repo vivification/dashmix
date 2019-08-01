@@ -10,6 +10,27 @@ class AccountContact extends Model
 
     public $primaryKey = 'f_contact_id';
 
+    protected $fillable = [
+
+    'f_contact_first_name',
+	'f_contact_last_name',
+	'f_contact_phone_main',
+	'f_contact_phone_mobile',
+	'f_contact_email',
+	'f_contact_fax',
+	'f_contact_address_street',
+	'f_contact_address_street_locale',
+	'f_contact_address_street_suburb',
+	'f_contact_address_street_state',
+	'f_contact_address_street_postcode',
+	'f_contact_address_mailing',
+	'f_contact_address_mailing_locale',
+	'f_contact_address_mailing_suburb',
+	'f_contact_address_mailing_state',
+	'f_contact_address_mailing_postcode'
+        ];
+
+
     public function primarycontact(){
 
         // Needs to return relation

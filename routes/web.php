@@ -32,13 +32,16 @@ Auth::routes();
     });
 
     Route::get('/accounts',              'AccountsController@index')->name('accounts');
+    Route::get('/accounts/create',       'AccountsController@create')->name('accounts.create');
     Route::get('/accounts/view/{id}',    'AccountsController@show')->name('accounts.show');
+    Route::post('/accounts/store',       'AccountsController@store')->name('accounts.store');
 
     Route::get('/quotes',                'QuotesController@index')->name('quotes');
     Route::get('/quotes/create',         'QuotesController@create')->name('quotes.create');
     Route::get('/quotes/view/{id}',      'QuotesController@show')->name('quotes.show');
     Route::post('/quotes/store',         'QuotesController@store')->name('quotes.store');
-    Route::get('/quotes/{id}/download', 'QuotesController@download')->name('quotes.download');
+    Route::get('/quotes/{id}/download',  'QuotesController@download')->name('quotes.download');
+    Route::get('/quotes/{id}/delete',    'QuotesController@destroy')->name('quotes.delete');
 
 
 
