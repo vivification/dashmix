@@ -36,8 +36,10 @@ class AccountsController extends Controller
     public function store(Request $request)
     {
         $contact = AccountContact::create($request->contact);
+        $account_data = $request->account;
+        $account_data['f_account_contact_primary'] = $contact->f_contact_id;
 
-        $account = Account::create($request->account + ['f_account_contact_primary' => $contact->id]);
+        $account = Account::create($account_data);
 
     }
 
