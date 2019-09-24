@@ -37,14 +37,23 @@ class AccountContact extends Model
         // 2nd Parameter: foreignKey corresponds to the primary key of the table you want to link.
         // 3rd Parameter: localKey is the key in (f_contact) table that connects to other table (technically speaking foreign key)
 
-        return $this->belongsTo('App\Account','f_account_id', 'f_contact_id');
+        return $this->belongsTo('App\Account','f_account_contact_primary', 'f_contact_id');
 
-}
+    }
 
     public function additionalcontacts(){
 
-        return $this->hasMany('App\Account', 'f_account_id', 'f_contact_id');
+        return $this->hasMany('App\Account', 'id', 'f_contact_reference');
 
     }
+
+
+    public function notes() {
+
+        return $this->hasMany('App\Note');
+    }
+
+
+
 
 }

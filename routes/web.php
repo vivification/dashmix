@@ -36,6 +36,8 @@ Auth::routes();
     Route::get('/accounts/view/{id}',    'AccountsController@show')->name('accounts.show');
     Route::post('/accounts/store',       'AccountsController@store')->name('accounts.store');
 
+    Route::get('/contacts/view/{id}',    'ContactsController@show')->name('contacts.show');
+
     Route::get('/quotes',                'QuotesController@index')->name('quotes');
     Route::get('/quotes/create',         'QuotesController@create')->name('quotes.create');
     Route::get('/quotes/view/{id}',      'QuotesController@show')->name('quotes.show');
