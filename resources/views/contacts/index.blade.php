@@ -39,38 +39,51 @@
                             <th class="text-center" style="width: 50px;">#</th>
                             <th class="d-none d-sm-table-cell" >First Name</th>
                             <th class="d-none d-sm-table-cell" >Last Name</th>
+                            <th class="d-none d-sm-table-cell" >Account</th>
                             <th class="d-none d-sm-table-cell" >Phone</th>
                             <th class="d-none d-sm-table-cell" >Mobile</th>
                             <th class="d-none d-sm-table-cell" >Fax</th>
                             <th class="d-none d-sm-table-cell" >Email</th>
                             <th style="width: 5%;">Status</th>
+                            <th style="width: 5%;"></th>
+                            <th style="width: 5%;"></th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($contact as $contacts)
                         <tr>
                             <td class="text-center">
-                                <a href="contacts/view/{{$contact->f_contact_id}}">{{$contact->f_contact_id}}</a></td>
-                            <td class="font-w600">
-                                {{$contact->f_contact_first_name}}
+                                <a href="contacts/view/{{$contacts->f_contact_id}}">{{$contacts->f_contact_id}}</a>
                             </td>
                             <td class="font-w600">
-                                {{$contact->f_contact_last_name}}
+                                {{$contacts->f_contact_first_name}}
                             </td>
                             <td class="font-w600">
-                               {{$contact->f_contact_phone_main}}
+                                {{$contacts->f_contact_last_name}}
                             </td>
                             <td class="font-w600">
-                               {{$contact->f_contact_phone_mobile}}
+                                "show account here"
                             </td>
                             <td class="font-w600">
-                               {{$contact->f_contact_phone_fax}}
+                               {{$contacts->f_contact_phone_main}}
                             </td>
                             <td class="font-w600">
-                               {{$contact->f_contact_phone_email}}
+                               {{$contacts->f_contact_phone_mobile}}
                             </td>
                             <td class="font-w600">
-                               {{$contact->f_contact_status}}
+                               {{$contacts->f_contact_fax}}
+                            </td>
+                            <td class="font-w600">
+                               {{$contacts->f_contact_email}}
+                            </td>
+                            <td class="font-w600">
+                               {{$contacts->f_contact_status}}
+                            </td>
+                            <td class="font-w600">
+                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">View</button>
+                            </td>
+                            <td class="font-w600">
+                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">Edit</button>
                             </td>
                         </tr>
                         @endforeach
