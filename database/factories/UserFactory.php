@@ -2,6 +2,7 @@
 
 use App\User;
 use App\Account;
+use App\AccountContact;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -37,5 +38,20 @@ $factory->define(Account::class, function (Faker $faker) {
         'f_account_address_mailing'        => $faker->streetAddress,
         'f_account_address_mailing_locale' => $faker->postcode,
         'f_account_abn'                    => $faker->swiftBicNumber,
+        'f_account_status'                 => '1',
+        'f_account_type'                   => '1'
+    ];
+});
+
+$factory->define(AccountContact::class, function (Faker $faker) {
+    return [
+        'f_contact_first_name'            => $faker->firstName,
+        'f_contact_last_name'             => $faker->lastName,
+        'f_contact_phone_main'            => $faker->phoneNumber,
+        'f_contact_phone_mobile'          => $faker->phoneNumber,
+        'f_contact_email'                 => $faker->companyEmail,
+        'f_contact_fax'                   => $faker->phoneNumber,
+        'f_contact_address_street'        => $faker->streetAddress,
+        'f_contact_status'                => 'Active'
     ];
 });

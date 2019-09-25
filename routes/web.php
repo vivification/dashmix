@@ -33,8 +33,12 @@ Auth::routes();
 
     Route::get('/accounts',              'AccountsController@index')->name('accounts');
     Route::get('/accounts/create',       'AccountsController@create')->name('accounts.create');
+    Route::get('/accounts/edit/{id}',         'AccountsController@edit')->name('accounts.edit');
     Route::get('/accounts/view/{id}',    'AccountsController@show')->name('accounts.show');
-    Route::post('/accounts/store',       'AccountsController@store')->name('accounts.store');
+    Route::post('/accounts/update',       'AccountsController@update')->name('accounts.update');
+
+    Route::get('/contacts',              'ContactsController@index')->name('contacts');
+    Route::get('/contacts/view/{id}',    'ContactsController@show')->name('contacts.show');
 
     Route::get('/quotes',                'QuotesController@index')->name('quotes');
     Route::get('/quotes/create',         'QuotesController@create')->name('quotes.create');

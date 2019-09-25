@@ -35,10 +35,16 @@ class AccountsController extends Controller
 
     public function store(Request $request)
     {
+        //create the Contact Record
         $contact = AccountContact::create($request->contact);
+
+        //?????
         $account_data = $request->account;
+
+        //Set the column 'f_account_contact_primary' from the Contact we created in $contact variable
         $account_data['f_account_contact_primary'] = $contact->f_contact_id;
 
+        //Create the account
         $account = Account::create($account_data);
 
     }
@@ -61,7 +67,9 @@ class AccountsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $accounts = Account::with('account_type', 'account_status')->findOrFail($id);
+
+        return view('accounts.edit', compact('accounts'));
     }
 
     /**
