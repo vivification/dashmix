@@ -1,20 +1,6 @@
 @extends('layouts.backend')
 
 @section('content')
-    <!-- Hero -->
-    {{--    <div class="bg-body-light">--}}
-    {{--        <div class="content content-full">--}}
-    {{--            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">--}}
-    {{--                <h3 ><i class="far fa-address-card fa-lg" style="margin-bottom: 0 !important;"></i> {{$accounts->f_account_name}}</h3>--}}
-    {{--                <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">--}}
-    {{--                    <ol class="breadcrumb">--}}
-    {{--                        <li class="breadcrumb-item">App</li>--}}
-    {{--                        <li class="breadcrumb-item active" aria-current="page">View Account</li>--}}
-    {{--                    </ol>--}}
-    {{--                </nav>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
 
     <div class="content">
         <div class="col-md-12">
@@ -26,6 +12,9 @@
                             @if($accounts->account_status)
                                 {{$accounts->account_status->f_account_status_name}}
                             @endif
+                        </button>
+                        <button class= "btn btn-warning" onclick="window.location.href='/accounts/edit/{{$accounts->id}}'">
+                            Edit
                         </button>
                     </div>
                 </div>

@@ -67,7 +67,9 @@ class AccountsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $accounts = Account::with('account_type', 'account_status')->findOrFail($id);
+
+        return view('accounts.edit', compact('accounts'));
     }
 
     /**
