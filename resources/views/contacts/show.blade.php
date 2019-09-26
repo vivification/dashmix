@@ -1,20 +1,6 @@
 @extends('layouts.backend')
 
 @section('content')
-    <!-- Hero -->
-    {{--    <div class="bg-body-light">--}}
-    {{--        <div class="content content-full">--}}
-    {{--            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">--}}
-    {{--                <h3 ><i class="far fa-address-card fa-lg" style="margin-bottom: 0 !important;"></i> {{$accounts->f_account_name}}</h3>--}}
-    {{--                <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">--}}
-    {{--                    <ol class="breadcrumb">--}}
-    {{--                        <li class="breadcrumb-item">App</li>--}}
-    {{--                        <li class="breadcrumb-item active" aria-current="page">View Account</li>--}}
-    {{--                    </ol>--}}
-    {{--                </nav>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
 
     <div class="content">
         <div class="col-md-12">
@@ -22,7 +8,7 @@
 
                 <div class="block-header bg-primary-dark-op">
                     <button type="button" class="btn btn-danger">
-                        {{$contact->additionalcontacts->f_account_name}}
+                        View Contact Record
                     </button>
                     <div class="block-options">
                     </div>
@@ -50,16 +36,21 @@
                                             <div class="form-group">
                                                 <label type="text" name="name">Client Type:</label>
                                                 <br>
-                                                <button type="button" class="btn btn-sm btn-success">
+                                                <button type="button" class="btn btn-success">
                                                     {{$contact->f_contact_status}}
                                                 </button>
                                                 <br>
                                             </div>
-                                            <div class="form-group">
-                                                <label type="text" name="name">Account Name:</label>
-                                                <input type="text" name="name"
-                                                       value=""
-                                                       class="form-control" readonly>
+                                            <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label type="text" name="name">Account:</label>
+                                                <div class="input-group">
+                                                    <input type="email" class="form-control" id="example-group3-input2" name="example-group3-input2" placeholder="{{$contact->additionalcontacts->f_account_name}}" readonly>
+                                                    <div class="input-group-append">
+                                                        <button type="button" class="btn btn-primary">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             </div>
                                             <div class="form-group">
                                                 <label type="text" name="name">Address:</label>
