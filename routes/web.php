@@ -33,7 +33,7 @@ Auth::routes();
 
     Route::get('/accounts',              'AccountsController@index')->name('accounts');
     Route::get('/accounts/create',       'AccountsController@create')->name('accounts.create');
-    Route::get('/accounts/edit/{id}',         'AccountsController@edit')->name('accounts.edit');
+    Route::get('/accounts/edit/{id}',     'AccountsController@edit')->name('accounts.edit');
     Route::get('/accounts/view/{id}',    'AccountsController@show')->name('accounts.show');
     Route::post('/accounts/update',       'AccountsController@update')->name('accounts.update');
 
