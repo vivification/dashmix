@@ -43,7 +43,11 @@ class AccountContact extends Model
 
     public function additionalcontacts(){
 
-        return $this->hasMany('App\Account', 'id', 'f_contact_reference');
+        //return $this->hasMany('App\Account', 'id', 'f_contact_reference');
+        //The relation from contact to account is always 1 to 1, as each contact is connected to only one account
+        // if it is hasMany then we will have to change show.blade to "$contact->additionalcontacts[0]->f_account_name" instead of 
+        // "$contact->additionalcontacts->f_account_name"
+        return $this->hasOne('App\Account', 'id', 'f_contact_reference');
 
     }
 
