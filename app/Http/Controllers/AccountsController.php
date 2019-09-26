@@ -72,24 +72,20 @@ class AccountsController extends Controller
         return view('accounts.edit', compact('accounts'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $accounts = Account::findorFail($id);
+        $accounts->accountname = $request->input('f_account_name');
+
+        //save
+        $accounts->save();
+
+        //redirect
+        return redirect('/accounts');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

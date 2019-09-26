@@ -8,14 +8,11 @@
                 <div class="block-header bg-primary-dark-op">
                     <h2 class="block-title"><i class="far fa-address-card fa-lg"></i> {{$accounts->f_account_name}}</h2>
                     <div class="block-options">
-                        <button type="button" class="btn btn-success">
-                            @if($accounts->account_status)
-                                {{$accounts->account_status->f_account_status_name}}
-                            @endif
-                        </button>
-                        <button class= "btn btn-warning" onclick="window.location.href='/quotes/create'">
-                            Edit
-                        </button>
+                        <form class="save" method="post" action="{{route('accounts.update', $accounts->id) }}">
+                            <input type="hidden" name="_method" value="PUT">
+                            @method('POST')
+                            @csrf
+                        <input type="submit" class="btn btn-warning" value="Save">
                     </div>
                 </div>
 
@@ -41,17 +38,45 @@
                                                 <div class="block block-rounded block-bordered">
                                                     <div class="block-header">
                                                         <h3 class="block-title"><i
-                                                                    class="far fa-address-card fa-lg"></i> Account
-                                                            Details </h3>
+                                                                    class="far fa-address-card fa-lg"></i> Account Details </h3>
                                                     </div>
                                                     <div class="block-content">
-                                                        <form method="post" action="/edit/{{route('accounts.update', $accounts->id) }}">
-                                                            @method('PATCH')
-                                                            @csrf
+
+                                                            <div class="row">
+                                                                <div class="col-md-6 form-group">
+
+                                                            </div>
+
+                                                            </div>
 
                                                             <div class="form-group">
+                                                                <label type="text" name="name">Account Status:</label>
                                                                 <div class="input-group">
-                                                                    <input type="email" class="form-control" id="example-group4-input2" name="example-group4-input2" placeholder="Email" aria-label="Text input with dropdown button">
+                                                                    <input type="text" class="form-control" id="example-group4-input2"
+                                                                           value="@if($accounts->account_status)
+                                                                           {{$accounts->account_status->f_account_status_name}}
+                                                                           @endif"
+                                                                           name="example-group4-input2" placeholder="Select Customer Type">
+                                                                    <div class="input-group-append">
+                                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                                        </button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <a class="dropdown-item" href="javascript:void(0)">
+                                                                                <i class="far fa-fw fa-bell mr-1"></i> Active
+                                                                            </a>
+                                                                            <a class="dropdown-item" href="javascript:void(0)">
+                                                                                <i class="far fa-fw fa-envelope mr-1"></i> Inctive
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label type="text" name="name">Account Type:</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" id="example-group4-input2" value="{{$accounts->f_account_type}}" name="example-group4-input2" placeholder="Select Customer Type">
                                                                     <div class="input-group-append">
                                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                             <span class="sr-only">Toggle Dropdown</span>
@@ -69,55 +94,39 @@
                                                             </div>
 
                                                         <div class="form-group">
-                                                            <label type="text" name="name">Account Name:</label>
-                                                            <input type="text" name="name"
-                                                                   value="{{$accounts->f_account_name}}"
-                                                                   class="form-control" readonly>
+                                                            <label type="text" name="accountname">Account Name:</label>
+                                                            <input type="text" name="accountname" value="{{$accounts->f_account_name}}" class="form-control" >
                                                         </div>
                                                         <div class="form-group">
-                                                            <label type="text" name="name">Address:</label>
-                                                            <input type="text" name="name"
-                                                                   value="{{$accounts->f_account_address_street}}"
-                                                                   class="form-control" readonly>
+                                                            <label type="text" name="accountaddress">Address:</label>
+                                                            <input type="text" name="accountaddress" value="{{$accounts->f_account_address_street}}" class="form-control" >
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Phone:</label>
-                                                                <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_phone_primary}}"
-                                                                       class="form-control" readonly>
+                                                                <label type="text" name="accountphone">Phone:</label>
+                                                                <input type="text" name="accountphone" value="{{$accounts->f_account_phone_primary}}" class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Fax:</label>
-                                                                <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_fax}}"
-                                                                       class="form-control" readonly>
+                                                                <input type="text" name="name" value="{{$accounts->f_account_fax}}" class="form-control" >
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Email:</label>
-                                                                <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_email_primary}}"
-                                                                       class="form-control" readonly>
+                                                                <input type="text" name="name" value="{{$accounts->f_account_email_primary}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Website:</label>
-                                                                <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_website}}"
-                                                                       class="form-control" readonly>
+                                                                <input type="text" name="name" value="{{$accounts->f_account_website}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">ABN:</label>
-                                                                <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_abn}}"
-                                                                       class="form-control" readonly>
+                                                                <input type="text" name="name" value="{{$accounts->f_account_abn}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Vendor #:</label>
-                                                                <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_vendor}}"
-                                                                       class="form-control" readonly>
+                                                                <input type="text" name="name" value="{{$accounts->f_account_vendor}}" class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -205,5 +214,11 @@
 
 
 @section('js_after')
+
+            <script>
+                $(".save").on("submit", function(){
+                    return confirm("Are you sure you wish to save your changes?");
+                });
+            </script>
 
 @stop
