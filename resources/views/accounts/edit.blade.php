@@ -44,50 +44,23 @@
 
                                                             <div class="row">
                                                                 <div class="col-md-6 form-group">
-
-                                                            </div>
-
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label type="text" name="name">Account Status:</label>
-                                                                <div class="input-group">
-                                                                    <input type="text" class="form-control" id="example-group4-input2"
-                                                                           value="@if($accounts->account_status)
-                                                                           {{$accounts->account_status->f_account_status_name}}
-                                                                           @endif"
-                                                                           name="example-group4-input2" placeholder="Select Customer Type">
-                                                                    <div class="input-group-append">
-                                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                                                <i class="far fa-fw fa-bell mr-1"></i> Active
-                                                                            </a>
-                                                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                                                <i class="far fa-fw fa-envelope mr-1"></i> Inctive
-                                                                            </a>
-                                                                        </div>
+                                                                    <label type="text" name="name">Account Status:</label>
+                                                                    <div class="input-group">
+                                                                        <select class="form-control" id="exampleFormControlSelect1">
+                                                                            <option>Active</option>
+                                                                            <option>Inactive</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <label type="text" name="name">Account Type:</label>
-                                                                <div class="input-group">
-                                                                    <input type="text" class="form-control" id="example-group4-input2" value="{{$accounts->f_account_type}}" name="example-group4-input2" placeholder="Select Customer Type">
-                                                                    <div class="input-group-append">
-                                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                                                <i class="far fa-fw fa-bell mr-1"></i> Customer
-                                                                            </a>
-                                                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                                                <i class="far fa-fw fa-envelope mr-1"></i> Supplier
-                                                                            </a>
+                                                                <div class="col-md-6 form-group">
+                                                                    <label type="text" name="name">Account Type:</label>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group">
+                                                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                                                <option>Customer</option>
+                                                                                <option>Supplier</option>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                 </div>
