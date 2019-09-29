@@ -76,7 +76,10 @@ class AccountsController extends Controller
     public function update(Request $request, $id)
     {
         $accounts = Account::findorFail($id);
-        $accounts->accountname = $request->input('f_account_name');
+        //Previous
+        //$accounts->accountname = $request->input('f_account_name');
+        //Newly Added
+        $accounts->f_account_name = $request->input('accountname');
 
         //save
         $accounts->save();
