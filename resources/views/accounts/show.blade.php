@@ -69,11 +69,16 @@
                                                     <div class="block-content">
 
                                                         <div class="form-group">
-                                                            <label type="text" name="name">Client Type:</label>
+                                                            <label type="text" name="name">Client Type & Industry:</label>
                                                             <br>
                                                             <button type="button" class="btn btn-sm btn-success">
                                                                 @if($accounts->account_type)
                                                                     {{$accounts->account_type->f_account_type_name}}
+                                                                @endif
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn btn-info">
+                                                                @if($accounts->account_industry)
+                                                                    {{$accounts->account_industry->f_industry_name}}
                                                                 @endif
                                                             </button>
                                                             <br>
@@ -149,13 +154,13 @@
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Default Currency:</label>
                                                                 <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_currency}}"
+                                                                       value="{{$accounts->account_currency->f_currency_abbreviation}}"
                                                                        class="form-control" readonly>
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Price Level:</label>
                                                                 <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_price_level}}"
+                                                                       value="{{$accounts->price_level->f_price_level_name}}"
                                                                        class="form-control" readonly>
                                                             </div>
                                                             <div class="col-md-6 form-group">

@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AccountsTypeSeeder::class);
         $this->call(AccountStatusSeeder::class);
         $this->call(ContactsTableSeeder::class);
+        $this->call(AccountsIndustrySeeder::class);
+        $this->call(CurrencySeeder::class);
+        $this->call(PriceLevelSeeder::class);
 
     }
 }

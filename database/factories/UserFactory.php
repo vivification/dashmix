@@ -3,6 +3,7 @@
 use App\User;
 use App\Account;
 use App\AccountContact;
+use App\AccountIndustry;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -30,14 +31,19 @@ $factory->define(User::class, function (Faker $faker) {
 $factory->define(Account::class, function (Faker $faker) {
     return [
         'f_account_name'                   => $faker->company,
+        'f_account_contact_primary'        => mt_rand(1,100),
         'f_account_phone_primary'          => $faker->phoneNumber,
         'f_account_email_primary'          => $faker->unique()->safeEmail,
         'f_account_website'                => 'www.'.$faker->domainName,
+        'f_account_industry'               => mt_rand(1,22),
         'f_account_address_street'         => $faker->streetAddress,
         'f_account_address_street_locale'  => $faker->postcode,
         'f_account_address_mailing'        => $faker->streetAddress,
         'f_account_address_mailing_locale' => $faker->postcode,
         'f_account_abn'                    => $faker->swiftBicNumber,
+        'f_account_currency'               => mt_rand(1,5),
+        'f_account_price_level'            => mt_rand(1,8),
+        'f_account_terms'                  => '30',
         'f_account_status'                 => '1',
         'f_account_type'                   => '1'
     ];
@@ -52,6 +58,13 @@ $factory->define(AccountContact::class, function (Faker $faker) {
         'f_contact_email'                 => $faker->companyEmail,
         'f_contact_fax'                   => $faker->phoneNumber,
         'f_contact_address_street'        => $faker->streetAddress,
+        'f_contact_reference'             => mt_rand(1,100),
         'f_contact_status'                => 'Active'
     ];
 });
+//
+//$factory->define(AccountIndustry::class, function (Faker $faker){
+//    return [
+//        'f_industry_name'                 => $faker->domainWord
+//    ];
+//});

@@ -54,7 +54,7 @@ class AccountsController extends Controller
     {
 
         /* No need to add get().  */
-        $accounts = Account::with('account_type', 'account_status', 'contact_primary', 'contact_list')->find($id);
+        $accounts = Account::with('account_type', 'account_status', 'account_industry', 'contact_primary', 'account_currency', 'price_level', 'contact_list')->find($id);
 
         return view('accounts.show', compact('accounts'));
     }
@@ -75,11 +75,40 @@ class AccountsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $accounts = Account::findorFail($id);
+
         //Previous
         //$accounts->accountname = $request->input('f_account_name');
+
         //Newly Added
-        $accounts->f_account_name = $request->input('accountname');
+//        $accounttype = $accounts->account_type()
+//            ->update([
+//                'accounttype'       => $request->
+//            ]);
+//
+//        $accounts = Account::where('id', $id)
+//            ->update([
+//                'accountname'        => $request->f_account_name,
+//                'accountaddress'     => $request->f_account_address_street,
+//                'accountphone'       => $request->f_account_phone_primary,
+//                'accountfax'         => $request->f_account_fax,
+//                'accountemail'       => $request->f_account_email_primary,
+//                'accountwebsite'     => $request->f_account_website,
+//                'accountabn'         => $request->f_account_abn,
+//                'accountvendor'      => $request->f_account_vendor
+//            ]);
+
+        $accounts = Account::findorFail($id);
+
+        $accounts->f_account_name                   = $request->input('accountname');
+        $accounts->f_account_address_street         = $request->input('accountaddress');
+        $accounts->f_account_phone_primary          = $request->input('accountphone');
+        $accounts->f_account_fax                    = $request->input('accountfax');
+        $accounts->f_account_email_primary          = $request->input('accountemail');
+        $accounts->f_account_website                = $request->input('accountwebsite');
+        $accounts->f_account_abn                    = $request->input('accountabn');
+        $accounts->f_account_vendor                 = $request->input('accountvendor');
+        $accounts->f_account_type                   = $request->input('accounttype');
+        $accounts->f_account_status                 = $request->input('accountstatus');
 
         //save
         $accounts->save();

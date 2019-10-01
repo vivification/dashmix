@@ -8,7 +8,7 @@
 
                 <div class="block-header bg-primary-dark-op">
                     <button type="button" class="btn btn-danger">
-                        View Contact Record
+                        Viewing Contact Record
                     </button>
                     <div class="block-options">
                     </div>

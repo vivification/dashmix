@@ -46,20 +46,20 @@
                                                                 <div class="col-md-6 form-group">
                                                                     <label type="text" name="name">Account Status:</label>
                                                                     <div class="input-group">
-                                                                        <select class="form-control" id="exampleFormControlSelect1">
-                                                                            <option>Active</option>
-                                                                            <option>Inactive</option>
+                                                                        <select class="form-control" name="accountstatus">
+                                                                            <option value="1">Active</option>
+                                                                            <option value="2">Inactive</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-md-6 form-group">
-                                                                    <label type="text" name="name">Account Type:</label>
+                                                                    <label type="text" name="accounttype">Account Type:</label>
                                                                     <div class="input-group">
                                                                         <div class="input-group">
-                                                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                                                <option>Customer</option>
-                                                                                <option>Supplier</option>
+                                                                            <select class="form-control" name="accounttype">
+                                                                                <option value="1">Customer</option>
+                                                                                <option value="2">Supplier</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -80,26 +80,26 @@
                                                                 <input type="text" name="accountphone" value="{{$accounts->f_account_phone_primary}}" class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Fax:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_fax}}" class="form-control" >
+                                                                <label type="text" name="accountfax">Fax:</label>
+                                                                <input type="text" name="accountfax" value="{{$accounts->f_account_fax}}" class="form-control" >
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Email:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_email_primary}}" class="form-control">
+                                                                <label type="text" name="accountemail">Email:</label>
+                                                                <input type="text" name="accountemail" value="{{$accounts->f_account_email_primary}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Website:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_website}}" class="form-control">
+                                                                <label type="text" name="accountwebsite">Website:</label>
+                                                                <input type="text" name="accountwebsite" value="{{$accounts->f_account_website}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">ABN:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_abn}}" class="form-control">
+                                                                <label type="text" name="accountabn">ABN:</label>
+                                                                <input type="text" name="accountabn" value="{{$accounts->f_account_abn}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Vendor #:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_vendor}}" class="form-control">
+                                                                <label type="text" name="accountvendor">Vendor #:</label>
+                                                                <input type="text" name="accountvendor" value="{{$accounts->f_account_vendor}}" class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>

@@ -47,6 +47,25 @@ class Account extends Model
 
     }
 
+    public function account_industry(){
+
+        return $this->hasOne('App\AccountIndustry','id', 'id');
+
+    }
+
+    public function account_currency(){
+
+        return $this->hasOne('App\Currency', 'f_currency_id', 'f_account_currency');
+
+    }
+
+    public function price_level()
+    {
+
+        return $this->hasOne('App\PriceLevel', 'f_price_level_id', 'f_account_price_level');
+
+    }
+
     public function contact_primary(){
 
         return $this->hasOne('App\AccountContact', 'f_contact_id', 'f_account_contact_primary' );
