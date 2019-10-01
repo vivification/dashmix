@@ -45,6 +45,8 @@
                             <th class="d-none d-sm-table-cell" >Website</th>
                             <th class="d-none d-sm-table-cell" >Address</th>
                             <th style="width: 5%;">Status</th>
+                            <th style="width: 5%;"></th>
+                            <th style="width: 5%;"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -89,6 +91,12 @@
                                 @if($account->account_status)
                                     {{$account->account_status->f_account_status_name}}
                                 @endif
+                            </td>
+                            <td class="font-w600">
+                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='accounts/view/{{$account->id}}'">View</button>
+                            </td>
+                            <td class="font-w600">
+                                <button class= "btn btn-warning btn-sm" onclick="window.location.href='accounts/view/{{$account->id}}'">Edit</button>
                             </td>
                         </tr>
                         @endforeach

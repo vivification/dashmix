@@ -13,14 +13,29 @@ class PriceLevelSeeder extends Seeder
     {
         $pricelevels =
             [
-                ['f_price_level_name' => 'Coles & DTZ'],
-                ['f_price_level_name' => 'Ceva Logistics'],
-                ['f_price_level_name' => 'Linfox'],
-                ['f_price_level_name' => 'SolidCAT Testing'],
-                ['f_price_level_name' => 'Everyone Else'],
-                ['f_price_level_name' => 'Coles & City FM'],
-                ['f_price_level_name' => 'Bunnings'],
-                ['f_price_level_name' => 'AusPost']
+                ['f_price_level_name' => 'Coles & DTZ',
+                    'status' => 'Active'],
+
+                ['f_price_level_name' => 'Ceva Logistics',
+                    'status' => 'Active'],
+
+                ['f_price_level_name' => 'Linfox',
+                    'status' => 'Active'],
+
+                ['f_price_level_name' => 'SolidCAT Testing',
+                    'status' => 'Active'],
+
+                ['f_price_level_name' => 'Everyone Else',
+                    'status' => 'Active'],
+
+                ['f_price_level_name' => 'Coles & City FM',
+                    'status' => 'Active'],
+
+                ['f_price_level_name' => 'Bunnings',
+                    'status' => 'Active'],
+
+                ['f_price_level_name' => 'AusPost',
+                    'status' => 'Active']
             ];
 
         DB::table('f_price_level')->insert($pricelevels);

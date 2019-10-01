@@ -47,6 +47,9 @@ Auth::routes();
     Route::get('/quotes/{id}/download',     'QuotesController@download')->name('quotes.download');
     Route::get('/quotes/{id}/delete',       'QuotesController@destroy')->name('quotes.delete');
 
+    Route::get('/price-levels',             'PriceLevelsController@index')->name('pricelevels');
+
+
 
 
 

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Account;
-use App\AccountContact;
+use App\PriceLevel;
 use Illuminate\Http\Request;
 
-class ContactsController extends Controller
+class PriceLevelsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,12 @@ class ContactsController extends Controller
      */
     public function index()
     {
+        //echo 'hello';
 
-        $contact = AccountContact::all();
+        $pricelevel = PriceLevel::all();
 
-        return view ('contacts.index', compact('contact'));
+        return view('pricelevels.index', compact('pricelevel'));
+
     }
 
     /**
@@ -48,15 +49,17 @@ class ContactsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($contact_id)
+    public function show($id)
     {
-        $contact = AccountContact::with('additionalcontacts')->findOrFail($contact_id);
-
-        return view('contacts.show', compact('contact'));
+        //
     }
 
-
-
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
         //

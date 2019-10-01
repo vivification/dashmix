@@ -45,9 +45,9 @@
                                             <div class="col-md-6 form-group">
                                                 <label type="text" name="name">Account:</label>
                                                 <div class="input-group">
-                                                    <input type="email" class="form-control" id="example-group3-input2" name="example-group3-input2" placeholder="{{$contact->additionalcontacts->f_account_name}}" readonly>
+                                                    <input type="email" class="form-control"  placeholder="{{$contact->additionalcontacts->f_account_name}}" readonly>
                                                     <div class="input-group-append">
-                                                        <button type="button" class="btn btn-primary">View</button>
+                                                        <button type="button" class="btn btn-primary" onclick="window.location.href='/accounts/view/{{$contact->id}}'">View</button>
                                                     </div>
                                                 </div>
                                             </div>

@@ -83,7 +83,7 @@
                                 <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">View</button>
                             </td>
                             <td class="font-w600">
-                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">Edit</button>
+                                <button class= "btn btn-warning btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">Edit</button>
                             </td>
                         </tr>
                         @endforeach
