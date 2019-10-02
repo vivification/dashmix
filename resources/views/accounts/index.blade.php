@@ -19,17 +19,12 @@
 
     <!-- Page Content -->
     <div class="content">
-
-        <div class="row" style="padding-bottom: 30px;">
-            <button class= "btn btn-primary" onclick="window.location.href='/accounts/create'">Create Account</button>
-        </div>
-
         <div class="row">
-
             <!-- Dynamic Table Full -->
             <div class="block block-rounded block-bordered">
                 <div class="block-header block-header-default">
                     <h3 class="block-title">Accounts</h3>
+                    <button class= "btn btn-primary" onclick="window.location.href='/accounts/create'">Create Account</button>
                 </div>
                 <div class="block-content block-content-full">
                     <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
@@ -93,10 +88,12 @@
                                 @endif
                             </td>
                             <td class="font-w600">
-                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='accounts/view/{{$account->id}}'">View</button>
+                                <a href="accounts/view/{{$account->id}}">View</a>
+{{--                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='accounts/view/{{$account->id}}'">View</button>--}}
                             </td>
                             <td class="font-w600">
-                                <button class= "btn btn-warning btn-sm" onclick="window.location.href='accounts/view/{{$account->id}}'">Edit</button>
+                                <a href="#">Edit</a>
+{{--                                <button class= "btn btn-warning btn-sm" onclick="window.location.href='accounts/view/{{$account->id}}'">Edit</button>--}}
                             </td>
                         </tr>
                         @endforeach

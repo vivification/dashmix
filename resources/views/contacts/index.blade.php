@@ -62,7 +62,9 @@
                                 {{$contacts->f_contact_last_name}}
                             </td>
                             <td class="font-w600">
+                                @if($contacts->additionalcontacts)
                                 {{$contact->additionalcontacts->f_account_name}}
+                                @endif
                             </td>
                             <td class="font-w600">
                                {{$contacts->f_contact_phone_main}}
