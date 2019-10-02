@@ -47,8 +47,9 @@
                                                                     <label type="text" name="name">Account Status:</label>
                                                                     <div class="input-group">
                                                                         <select class="form-control" name="accountstatus">
-                                                                            <option value="1">Active</option>
-                                                                            <option value="2">Inactive</option>
+                                                                            @foreach($accounts as $account)
+                                                                                <option value="{{$accounts->account_status->f_account_status_id}}">{{$accounts->account_status->f_account_status_name}}</option>
+                                                                            @endforeach
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -58,8 +59,9 @@
                                                                     <div class="input-group">
                                                                         <div class="input-group">
                                                                             <select class="form-control" name="accounttype">
-                                                                                <option value="1">Customer</option>
-                                                                                <option value="2">Supplier</option>
+                                                                                @foreach($account_types as $account_type)
+                                                                                <option value="{{$account_types->f_account_type_id}}">{{$account_types->f_account_type_name}}</option>
+                                                                                @endforeach
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -117,25 +119,25 @@
                                                                 <label type="text" name="name">Terms:</label>
                                                                 <input type="text" name="name"
                                                                        value="{{$accounts->f_account_terms}}"
-                                                                       class="form-control" readonly>
+                                                                       class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Default Currency:</label>
                                                                 <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_currency}}"
-                                                                       class="form-control" readonly>
+                                                                       value="{{$accounts->account_currency->f_currency_abbreviation}}"
+                                                                       class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Price Level:</label>
                                                                 <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_price_level}}"
-                                                                       class="form-control" readonly>
+                                                                       value="{{$accounts->price_level->f_price_level_name}}"
+                                                                       class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Area Manager:</label>
                                                                 <input type="text" name="name"
                                                                        value="{{$accounts->f_account_area_manager}}"
-                                                                       class="form-control" readonly>
+                                                                       class="form-control" >
                                                             </div>
                                                         </div>
                                                     </div>

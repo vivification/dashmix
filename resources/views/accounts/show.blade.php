@@ -67,7 +67,6 @@
                                                             Details </h3>
                                                     </div>
                                                     <div class="block-content">
-
                                                         <div class="form-group">
                                                             <label type="text" name="name">Client Type & Industry:</label>
                                                             <br>
@@ -212,6 +211,9 @@
                                                     <i class="far fa-address-book fa-lg"></i>
                                                     Primary Contact
                                                 </h3>
+                                                <button class="btn btn-primary" onclick="window.location.href='/accounts/edit/{{$accounts->id}}'">
+                                                    Change Contact
+                                                </button>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="block block-rounded block-bordered"
@@ -275,6 +277,9 @@
                                                     <i class="far fa-address-book fa-lg"></i>
                                                     Contacts
                                                 </h3>
+                                                <button class="btn btn-primary" onclick="window.location.href='/accounts/edit/{{$accounts->id}}'">
+                                                    Add Contact
+                                                </button>
                                             </div>
                                             <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
                                             <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
@@ -332,10 +337,13 @@
                                                                 {{$single_contact->f_contact_email}}
                                                             </td>
                                                             <td class="font-w600">
-                                                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$single_contact->f_contact_id}}'">View</button>
+{{--                                                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$single_contact->f_contact_id}}'">View</button>--}}
+                                                                <a href="/contacts/view/{{$single_contact->f_contact_id}}">View</a>
                                                             </td>
                                                             <td class="font-w600">
-                                                                <button class= "btn btn-warning btn-sm" onclick="window.location.href='/quotes/create'">Edit</button>
+{{--                                                                    <button class= "btn btn-warning btn-sm" onclick="window.location.href='/quotes/create'">Edit</button>--}}
+                                                                <a href="#">Edit</a>
+
                                                             </td>
                                                         </tr>
                                                     @endforeach

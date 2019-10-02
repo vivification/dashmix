@@ -44,10 +44,10 @@
                                             <div class="row">
                                             <div class="col-md-6 form-group">
                                                 <label type="text" name="name">Account:</label>
-                                                <div class="input-group">
+                                                <div class="input-group-append">
                                                     <input type="email" class="form-control"  placeholder="{{$contact->additionalcontacts->f_account_name}}" readonly>
                                                     <div class="input-group-append">
-                                                        <button type="button" class="btn btn-primary" onclick="window.location.href='/accounts/view/{{$contact->id}}'">View</button>
+                                                    <button type="button" class="btn btn-primary" onclick="window.location.pathname='../accounts/view/{{$contact->f_contact_reference}}'">View</button>
                                                     </div>
                                                 </div>
                                             </div>

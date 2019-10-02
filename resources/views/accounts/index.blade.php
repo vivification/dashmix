@@ -101,17 +101,6 @@
                         </tr>
                         @endforeach
                         </tbody>
-{{--                            <td class="d-none d-sm-table-cell">--}}
-{{--                                client1<em class="text-muted">@example.com</em>--}}
-{{--                            </td>--}}
-{{--                            <td class="d-none d-sm-table-cell">--}}
-{{--                                <span class="badge badge-success">VIP</span>--}}
-{{--                            </td>--}}
-{{--                            <td>--}}
-{{--                                <em class="text-muted">9 days ago</em>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
                     </table>
                 </div>
             </div>

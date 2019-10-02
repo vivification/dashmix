@@ -17,10 +17,6 @@ class AccountsController extends Controller
     public function index()
     {
 
-//         $accounts = Account::all();
-
-//         return view('accounts.index');
-
         $accounts = Account::with('account_type', 'account_status', 'contact_primary')->get();
 
         return view('accounts.index', compact('accounts'));
@@ -56,7 +52,7 @@ class AccountsController extends Controller
         /* No need to add get().  */
         $accounts = Account::with('account_type', 'account_status', 'account_industry', 'contact_primary', 'account_currency', 'price_level', 'contact_list')->find($id);
 
-        return view('accounts.show', compact('accounts'));
+        return view('accounts.show', compact('accounts' ));
     }
 
     /**
@@ -67,9 +63,15 @@ class AccountsController extends Controller
      */
     public function edit($id)
     {
+        //if I use GET I get an error
+        //$accounts = Account::with('account_type', 'account_status')->get($id);
+
+        //if I use findOrFailed - works but still cannot get AccountType
         $accounts = Account::with('account_type', 'account_status')->findOrFail($id);
 
-        return view('accounts.edit', compact('accounts'));
+        $account_types = AccountType::all();
+
+        return view('accounts.edit', compact('accounts', 'account_types'));
     }
 
 

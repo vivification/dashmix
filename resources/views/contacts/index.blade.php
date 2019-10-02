@@ -62,7 +62,7 @@
                                 {{$contacts->f_contact_last_name}}
                             </td>
                             <td class="font-w600">
-                                "show account here"
+                                {{$contact->additionalcontacts->f_account_name}}
                             </td>
                             <td class="font-w600">
                                {{$contacts->f_contact_phone_main}}
@@ -80,10 +80,12 @@
                                {{$contacts->f_contact_status}}
                             </td>
                             <td class="font-w600">
-                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">View</button>
+                                <a href="/contacts/view/{{$contacts->f_contact_id}}">View</a>
+{{--                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">View</button>--}}
                             </td>
                             <td class="font-w600">
-                                <button class= "btn btn-warning btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">Edit</button>
+                                <a href="#">Edit</a>
+{{--                                <button class= "btn btn-warning btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">Edit</button>--}}
                             </td>
                         </tr>
                         @endforeach
