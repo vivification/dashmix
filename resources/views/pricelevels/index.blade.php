@@ -33,8 +33,9 @@
                         <tr>
                             <th class="text-center">#</th>
                             <th class="d-none d-sm-table-cell">Price Level</th>
+                            <th class="d-none d-sm-table-cell">Description</th>
+                            <th class="d-none d-sm-table-cell">Rate</th>
                             <th class="d-none d-sm-table-cell">Status</th>
-                            <th class="d-none d-sm-table-cell"></th>
                             <th class="d-none d-sm-table-cell"></th>
                         </tr>
                         </thead>
@@ -48,13 +49,16 @@
                                 {{$pricelevels->f_price_level_name}}
                             </td>
                             <td class="font-w600">
-                                {{$pricelevels->status}}
+                                {{$pricelevels->f_description}}
+                            </td>
+                            <td class="font-w600">
+                                {{$pricelevels->f_rate}}
+                            </td>
+                            <td class="font-w600">
+                                {{$pricelevels->f_status}}
                             </td>
                             <td>
                                 <a href="#">View</a>
-                            </td>
-                            <td>
-                                <a href="#">Edit</a>
                             </td>
                         </tr>
                         @endforeach

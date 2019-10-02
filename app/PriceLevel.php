@@ -17,7 +17,9 @@ class PriceLevel extends Model
         'f_price_level_reference',
         'f_price_level_created_by',
         'f_price_level_modified_by',
-        'status'
+        'f_status',
+        'f_description',
+        'f_rate'
     ];
 
     public function account_price_level(){

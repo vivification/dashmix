@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddStatusToFPriceLevelTable extends Migration
+class AddExtraFieldsToFPriceLevelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddStatusToFPriceLevelTable extends Migration
     public function up()
     {
         Schema::table('f_price_level', function (Blueprint $table) {
-            $table->string('f_status')->after('f_price_level_modified_by');
+            $table->string('f_description')->after('f_price_level_name');
+            $table->decimal('f_rate')->after('f_description');
         });
     }
 
@@ -26,7 +27,8 @@ class AddStatusToFPriceLevelTable extends Migration
     public function down()
     {
         Schema::table('f_price_level', function (Blueprint $table) {
-            $table->string('f_status');
+            $table->string('f_description');
+            $table->decimal('f_rate');
         });
     }
 }
