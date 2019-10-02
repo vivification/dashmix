@@ -31,11 +31,11 @@ Auth::routes();
         return view('dashboard');
     });
 
-    Route::get('/accounts',                 'AccountsController@index')->name('accounts');
-    Route::get('/accounts/create',          'AccountsController@create')->name('accounts.create');
-    Route::get('/accounts/edit/{id}',       'AccountsController@edit')->name('accounts.edit');
-    Route::get('/accounts/view/{id}',       'AccountsController@show')->name('accounts.show');
-    Route::post('/accounts/update/{id}',    'AccountsController@update')->name('accounts.update');
+    Route::get('/accounts',                     'AccountsController@index')->name('accounts');
+    Route::get('/accounts/create',              'AccountsController@create')->name('accounts.create');
+    Route::get('/accounts/edit/{id}',           'AccountsController@edit')->name('accounts.edit');
+    Route::get('/accounts/view/{id}',           'AccountsController@show')->name('accounts.show');
+    Route::post('/accounts/update/{id}',        'AccountsController@update')->name('accounts.update');
 
     Route::get('/contacts',                 'ContactsController@index')->name('contacts');
     Route::get('/contacts/view/{id}',       'ContactsController@show')->name('contacts.show');
@@ -48,6 +48,8 @@ Auth::routes();
     Route::get('/quotes/{id}/delete',       'QuotesController@destroy')->name('quotes.delete');
 
     Route::get('/price-levels',             'PriceLevelsController@index')->name('pricelevels');
+    Route::get('/price-levels/create',      'PriceLevelsController@create')->name('pricelevels.create');
+    Route::post('/price-levels/store',      'PriceLevelsController@store')->name('pricelevels.store');
 
 
 

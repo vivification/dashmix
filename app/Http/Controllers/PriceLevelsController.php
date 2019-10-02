@@ -29,7 +29,7 @@ class PriceLevelsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pricelevels.create');
     }
 
     /**
@@ -40,7 +40,15 @@ class PriceLevelsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pricelevels = new PriceLevel();
+
+        $pricelevels->f_price_level_name =  $request->input('f_price_level_name');
+        $pricelevels->status             =  $request->input('status');
+
+        $pricelevels->save();
+
+        return redirect('/price-levels');
+
     }
 
     /**

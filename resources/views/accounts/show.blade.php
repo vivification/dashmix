@@ -205,21 +205,18 @@
                                     </div>
                                     {{--Start Contacts--}}
                                     <div class="tab-pane" id="btabs-alt-static-contacts" role="tabpanel">
-                                        <div class="block block-rounded block-bordered">
+                                        <div class="block block-rounded block-bordered col-md-6">
                                             <div class="block-header block-header-default">
                                                 <h3 class="block-title">
                                                     <i class="far fa-address-book fa-lg"></i>
                                                     Primary Contact
                                                 </h3>
-                                                <button class="btn btn-primary" onclick="window.location.href='/accounts/edit/{{$accounts->id}}'">
-                                                    Change Contact
-                                                </button>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="block block-rounded block-bordered"
                                                      style="margin-top: 20px;">
                                                     <div class="block-content">
-                                                        <div class="col-md-6 form-group">
+                                                        <div class="col-md-12 form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
@@ -231,7 +228,7 @@
                                                                        class="form-control" readonly>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div class="col-md-12 form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
@@ -243,7 +240,7 @@
                                                                        class="form-control" readonly>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div class="col-md-12 form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
@@ -255,7 +252,7 @@
                                                                        class="form-control" readonly>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div class="col-md-12 form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
@@ -277,7 +274,7 @@
                                                     <i class="far fa-address-book fa-lg"></i>
                                                     Contacts
                                                 </h3>
-                                                <button class="btn btn-primary" onclick="window.location.href='/accounts/edit/{{$accounts->id}}'">
+                                                <button class="btn btn-primary" onclick="window.location.href='/accounts/change-contact/{{$accounts->id}}'">
                                                     Add Contact
                                                 </button>
                                             </div>
@@ -300,8 +297,9 @@
                                                     <th class="d-none d-sm-table-cell" style="width:auto;">Fax</th>
                                                     <th class="d-none d-sm-table-cell" style="width:auto;">Email
                                                     </th>
-                                                    <th class="d-none d-sm-table-cell" style="width: 5%;"></th>
-                                                    <th style="width: 5%;"></th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;"></th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;"></th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;"></th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -338,12 +336,13 @@
                                                             </td>
                                                             <td class="font-w600">
 {{--                                                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$single_contact->f_contact_id}}'">View</button>--}}
-                                                                <a href="/contacts/view/{{$single_contact->f_contact_id}}">View</a>
+                                                                <a href="/contacts/view/{{$single_contact->f_contact_id}}">View Details</a>
                                                             </td>
                                                             <td class="font-w600">
-{{--                                                                    <button class= "btn btn-warning btn-sm" onclick="window.location.href='/quotes/create'">Edit</button>--}}
                                                                 <a href="#">Edit</a>
-
+                                                            </td>
+                                                            <td class="font-w600">
+                                                                <a href="#">Set as Primary</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

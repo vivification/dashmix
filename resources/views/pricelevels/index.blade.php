@@ -19,24 +19,19 @@
 
     <!-- Page Content -->
     <div class="content">
-
-        <div class="row" style="padding-bottom: 30px;">
-            <button class= "btn btn-primary" onclick="window.location.href='/accounts/create'">Create Price Level</button>
-        </div>
-
         <div class="row">
-
             <!-- Dynamic Table Full -->
             <div class="block block-rounded block-bordered">
                 <div class="block-header block-header-default">
                     <h3 class="block-title">Price Levels</h3>
+                    <button class= "btn btn-primary" onclick="window.location.href='price-levels/create'">Create Price Level</button>
                 </div>
                 <div class="block-content block-content-full">
                     <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
                     <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
                         <thead>
                         <tr>
-                            <th class="text-center" >#</th>
+                            <th class="text-center">#</th>
                             <th class="d-none d-sm-table-cell">Price Level</th>
                             <th class="d-none d-sm-table-cell">Status</th>
                             <th class="d-none d-sm-table-cell"></th>
@@ -56,12 +51,10 @@
                                 {{$pricelevels->status}}
                             </td>
                             <td>
-{{--                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">View</button>--}}
-                                <button class= "btn btn-sm btn-primary">View</button>
+                                <a href="#">View</a>
                             </td>
                             <td>
-{{--                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$contacts->f_contact_id}}'">Edit</button>--}}
-                                <button class= "btn btn-warning btn-sm">Edit</button>
+                                <a href="#">Edit</a>
                             </td>
                         </tr>
                         @endforeach

@@ -55,18 +55,27 @@ class AccountsController extends Controller
         return view('accounts.show', compact('accounts' ));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function editprimarycontact($id)
+    {
+
+
+
+
+
+        return view('accounts.change-contact', compact('accounts' ));
+    }
+
+
+
+
     public function edit($id)
     {
+        //B.K 02-10-2019
         //if I use GET I get an error
         //$accounts = Account::with('account_type', 'account_status')->get($id);
 
         //if I use findOrFailed - works but still cannot get AccountType
+        //I also try firstOrFail but results in error "select 1 from f_accounts"
         $accounts = Account::with('account_type', 'account_status')->findOrFail($id);
 
         $account_types = AccountType::all();
