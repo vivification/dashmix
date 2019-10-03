@@ -8,7 +8,7 @@
 
                 <div class="block-header bg-primary-dark-op">
                     <button type="button" class="btn btn-danger">
-                        View Contact Record
+                        Viewing Contact Record
                     </button>
                     <div class="block-options">
                     </div>
@@ -44,10 +44,10 @@
                                             <div class="row">
                                             <div class="col-md-6 form-group">
                                                 <label type="text" name="name">Account:</label>
-                                                <div class="input-group">
-                                                    <input type="email" class="form-control" id="example-group3-input2" name="example-group3-input2" placeholder="{{$contact->additionalcontacts->f_account_name}}" readonly>
+                                                <div class="input-group-append">
+                                                    <input type="email" class="form-control"  placeholder="{{$contact->additionalcontacts->f_account_name}}" readonly>
                                                     <div class="input-group-append">
-                                                        <button type="button" class="btn btn-primary">View</button>
+                                                    <button type="button" class="btn btn-primary" onclick="window.location.pathname='../accounts/view/{{$contact->f_contact_reference}}'">View</button>
                                                     </div>
                                                 </div>
                                             </div>

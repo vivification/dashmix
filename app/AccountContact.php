@@ -31,6 +31,7 @@ class AccountContact extends Model
         ];
 
 
+
     public function primarycontact(){
 
         // Needs to return relation

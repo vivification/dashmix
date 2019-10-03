@@ -50,6 +50,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#btabs-alt-static-notes">Notes +</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#btabs-alt-static-logs">Logs +</a>
+                                </li>
 
                             </ul>
                             <div class="block block-rounded block-bordered">
@@ -67,13 +70,17 @@
                                                             Details </h3>
                                                     </div>
                                                     <div class="block-content">
-
                                                         <div class="form-group">
-                                                            <label type="text" name="name">Client Type:</label>
+                                                            <label type="text" name="name">Client Type & Industry:</label>
                                                             <br>
                                                             <button type="button" class="btn btn-sm btn-success">
                                                                 @if($accounts->account_type)
                                                                     {{$accounts->account_type->f_account_type_name}}
+                                                                @endif
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn btn-info">
+                                                                @if($accounts->account_industry)
+                                                                    {{$accounts->account_industry->f_industry_name}}
                                                                 @endif
                                                             </button>
                                                             <br>
@@ -149,13 +156,13 @@
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Default Currency:</label>
                                                                 <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_currency}}"
+                                                                       value="{{$accounts->account_currency->f_currency_abbreviation}}"
                                                                        class="form-control" readonly>
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Price Level:</label>
                                                                 <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_price_level}}"
+                                                                       value="{{$accounts->price_level->f_price_level_name}}"
                                                                        class="form-control" readonly>
                                                             </div>
                                                             <div class="col-md-6 form-group">
@@ -201,7 +208,7 @@
                                     </div>
                                     {{--Start Contacts--}}
                                     <div class="tab-pane" id="btabs-alt-static-contacts" role="tabpanel">
-                                        <div class="block block-rounded block-bordered">
+                                        <div class="block block-rounded block-bordered col-md-6">
                                             <div class="block-header block-header-default">
                                                 <h3 class="block-title">
                                                     <i class="far fa-address-book fa-lg"></i>
@@ -212,7 +219,7 @@
                                                 <div class="block block-rounded block-bordered"
                                                      style="margin-top: 20px;">
                                                     <div class="block-content">
-                                                        <div class="col-md-6 form-group">
+                                                        <div class="col-md-12 form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
@@ -224,7 +231,7 @@
                                                                        class="form-control" readonly>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div class="col-md-12 form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
@@ -236,7 +243,7 @@
                                                                        class="form-control" readonly>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div class="col-md-12 form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
@@ -248,7 +255,7 @@
                                                                        class="form-control" readonly>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div class="col-md-12 form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
@@ -270,6 +277,9 @@
                                                     <i class="far fa-address-book fa-lg"></i>
                                                     Contacts
                                                 </h3>
+                                                <button class="btn btn-primary" onclick="window.location.href='/accounts/change-contact/{{$accounts->id}}'">
+                                                    Add Contact
+                                                </button>
                                             </div>
                                             <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
                                             <table class="table table-bordered table-striped table-vcenter js-dataTable-full myCustomTable">
@@ -290,8 +300,9 @@
                                                     <th class="d-none d-sm-table-cell" style="width:auto;">Fax</th>
                                                     <th class="d-none d-sm-table-cell" style="width:auto;">Email
                                                     </th>
-                                                    <th class="d-none d-sm-table-cell" style="width: 5%;"></th>
-                                                    <th style="width: 5%;"></th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;"></th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;"></th>
+                                                    <th class="d-none d-sm-table-cell" style="width:auto;"></th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -327,10 +338,14 @@
                                                                 {{$single_contact->f_contact_email}}
                                                             </td>
                                                             <td class="font-w600">
-                                                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$single_contact->f_contact_id}}'">View</button>
+{{--                                                                <button class= "btn btn-primary btn-sm" onclick="window.location.href='/contacts/view/{{$single_contact->f_contact_id}}'">View</button>--}}
+                                                                <a href="/contacts/view/{{$single_contact->f_contact_id}}">View Details</a>
                                                             </td>
                                                             <td class="font-w600">
-                                                                <button class= "btn btn-warning btn-sm" onclick="window.location.href='/quotes/create'">Edit</button>
+                                                                <a href="#">Edit</a>
+                                                            </td>
+                                                            <td class="font-w600">
+                                                                <a href="#">Set as Primary</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -553,6 +568,36 @@
                                                 <tbody>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
+                                    {{--Start Logs--}}
+                                    <div class="tab-pane" id="btabs-alt-static-logs" role="tabpanel">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Logs
+                                                </h3>
+                                            </div>
+                                            <div>
+                                                <ul>
+                                                    @forelse ($audits as $audit)
+                                                        <li>
+{{--                                                            This LANG file is located under resources -> lang -> en > accounts.php--}}
+                                                            @lang('/audit/accounts.updated.metadata', $audit->getMetadata())
+
+                                                            @foreach ($audit->getModified() as $attribute => $modified)
+                                                                <ul>
+                                                                    <li>@lang('/audit/accounts.'.$audit->event.'.modified.'.$attribute, $modified)</li>
+                                                                </ul>
+                                                            @endforeach
+                                                        </li>
+                                                    @empty
+                                                        <p>@lang('/audit/accounts.unavailable_audits')</p>
+                                                    @endforelse
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

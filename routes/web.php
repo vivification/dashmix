@@ -31,11 +31,11 @@ Auth::routes();
         return view('dashboard');
     });
 
-    Route::get('/accounts',                 'AccountsController@index')->name('accounts');
-    Route::get('/accounts/create',          'AccountsController@create')->name('accounts.create');
-    Route::get('/accounts/edit/{id}',       'AccountsController@edit')->name('accounts.edit');
-    Route::get('/accounts/view/{id}',       'AccountsController@show')->name('accounts.show');
-    Route::post('/accounts/update/{id}',    'AccountsController@update')->name('accounts.update');
+    Route::get('/accounts',                     'AccountsController@index')->name('accounts');
+    Route::get('/accounts/create',              'AccountsController@create')->name('accounts.create');
+    Route::get('/accounts/edit/{id}',           'AccountsController@edit')->name('accounts.edit');
+    Route::get('/accounts/view/{id}',           'AccountsController@show')->name('accounts.show');
+    Route::post('/accounts/update/{id}',        'AccountsController@update')->name('accounts.update');
 
     Route::get('/contacts',                 'ContactsController@index')->name('contacts');
     Route::get('/contacts/view/{id}',       'ContactsController@show')->name('contacts.show');
@@ -46,6 +46,14 @@ Auth::routes();
     Route::post('/quotes/store',            'QuotesController@store')->name('quotes.store');
     Route::get('/quotes/{id}/download',     'QuotesController@download')->name('quotes.download');
     Route::get('/quotes/{id}/delete',       'QuotesController@destroy')->name('quotes.delete');
+
+    Route::get('/price-levels',                 'PriceLevelsController@index')->name('pricelevels');
+    Route::get('/price-levels/create',          'PriceLevelsController@create')->name('pricelevels.create');
+    Route::get('/price-levels/view/{id}',       'PriceLevelsController@show')->name('pricelevels.show');
+    Route::get('/price-levels/edit/{id}',       'PriceLevelsController@edit')->name('pricelevels.edit');
+    Route::post('/price-levels/update/{id}',    'PriceLevelsController@update')->name('pricelevels.update');
+    Route::post('/price-levels/store',          'PriceLevelsController@store')->name('pricelevels.store');
+
 
 
 

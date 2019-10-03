@@ -3,13 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\AccountType;
-use App\AccountStatus;
-use App\Http\Middleware;
+use OwenIt\Auditing\Contracts\Auditable;
 
 
-class Account extends Model
+class Account extends Model implements Auditable
 {
+
+    use \OwenIt\Auditing\Auditable;
+
     protected $table = 'f_accounts';
 
     protected $fillable = [
@@ -44,6 +45,25 @@ class Account extends Model
     public function account_type(){
 
         return $this->hasOne('App\AccountType','f_account_type_id', 'f_account_type');
+
+    }
+
+    public function account_industry(){
+
+        return $this->hasOne('App\AccountIndustry','id', 'id');
+
+    }
+
+    public function account_currency(){
+
+        return $this->hasOne('App\Currency', 'f_currency_id', 'f_account_currency');
+
+    }
+
+    public function price_level()
+    {
+
+        return $this->hasOne('App\PriceLevel', 'f_price_level_id', 'f_account_price_level');
 
     }
 

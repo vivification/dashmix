@@ -44,50 +44,25 @@
 
                                                             <div class="row">
                                                                 <div class="col-md-6 form-group">
-
-                                                            </div>
-
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label type="text" name="name">Account Status:</label>
-                                                                <div class="input-group">
-                                                                    <input type="text" class="form-control" id="example-group4-input2"
-                                                                           value="@if($accounts->account_status)
-                                                                           {{$accounts->account_status->f_account_status_name}}
-                                                                           @endif"
-                                                                           name="example-group4-input2" placeholder="Select Customer Type">
-                                                                    <div class="input-group-append">
-                                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                                                <i class="far fa-fw fa-bell mr-1"></i> Active
-                                                                            </a>
-                                                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                                                <i class="far fa-fw fa-envelope mr-1"></i> Inctive
-                                                                            </a>
-                                                                        </div>
+                                                                    <label type="text" name="name">Account Status:</label>
+                                                                    <div class="input-group">
+                                                                        <select class="form-control" name="accountstatus">
+                                                                            @foreach($accounts as $account)
+                                                                                <option value="{{$accounts->account_status->f_account_status_id}}">{{$accounts->account_status->f_account_status_name}}</option>
+                                                                            @endforeach
+                                                                        </select>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <label type="text" name="name">Account Type:</label>
-                                                                <div class="input-group">
-                                                                    <input type="text" class="form-control" id="example-group4-input2" value="{{$accounts->f_account_type}}" name="example-group4-input2" placeholder="Select Customer Type">
-                                                                    <div class="input-group-append">
-                                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                                                <i class="far fa-fw fa-bell mr-1"></i> Customer
-                                                                            </a>
-                                                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                                                <i class="far fa-fw fa-envelope mr-1"></i> Supplier
-                                                                            </a>
+                                                                <div class="col-md-6 form-group">
+                                                                    <label type="text" name="accounttype">Account Type:</label>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group">
+{{--                                                                            <select class="form-control" name="accounttype">--}}
+{{--                                                                                @foreach($account_types as $account_type)--}}
+{{--                                                                                <option value="{{$account_types->f_account_type_id}}">{{$account_types->f_account_type_name}}</option>--}}
+{{--                                                                                @endforeach--}}
+{{--                                                                            </select>--}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -107,26 +82,26 @@
                                                                 <input type="text" name="accountphone" value="{{$accounts->f_account_phone_primary}}" class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Fax:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_fax}}" class="form-control" >
+                                                                <label type="text" name="accountfax">Fax:</label>
+                                                                <input type="text" name="accountfax" value="{{$accounts->f_account_fax}}" class="form-control" >
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Email:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_email_primary}}" class="form-control">
+                                                                <label type="text" name="accountemail">Email:</label>
+                                                                <input type="text" name="accountemail" value="{{$accounts->f_account_email_primary}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Website:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_website}}" class="form-control">
+                                                                <label type="text" name="accountwebsite">Website:</label>
+                                                                <input type="text" name="accountwebsite" value="{{$accounts->f_account_website}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">ABN:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_abn}}" class="form-control">
+                                                                <label type="text" name="accountabn">ABN:</label>
+                                                                <input type="text" name="accountabn" value="{{$accounts->f_account_abn}}" class="form-control">
                                                             </div>
                                                             <div class="col-md-6 form-group">
-                                                                <label type="text" name="name">Vendor #:</label>
-                                                                <input type="text" name="name" value="{{$accounts->f_account_vendor}}" class="form-control">
+                                                                <label type="text" name="accountvendor">Vendor #:</label>
+                                                                <input type="text" name="accountvendor" value="{{$accounts->f_account_vendor}}" class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -144,25 +119,25 @@
                                                                 <label type="text" name="name">Terms:</label>
                                                                 <input type="text" name="name"
                                                                        value="{{$accounts->f_account_terms}}"
-                                                                       class="form-control" readonly>
+                                                                       class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Default Currency:</label>
                                                                 <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_currency}}"
-                                                                       class="form-control" readonly>
+                                                                       value="{{$accounts->account_currency->f_currency_abbreviation}}"
+                                                                       class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Price Level:</label>
                                                                 <input type="text" name="name"
-                                                                       value="{{$accounts->f_account_price_level}}"
-                                                                       class="form-control" readonly>
+                                                                       value="{{$accounts->price_level->f_price_level_name}}"
+                                                                       class="form-control" >
                                                             </div>
                                                             <div class="col-md-6 form-group">
                                                                 <label type="text" name="name">Area Manager:</label>
                                                                 <input type="text" name="name"
                                                                        value="{{$accounts->f_account_area_manager}}"
-                                                                       class="form-control" readonly>
+                                                                       class="form-control" >
                                                             </div>
                                                         </div>
                                                     </div>
