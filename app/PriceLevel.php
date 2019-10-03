@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class PriceLevel extends Model
+class PriceLevel extends Model implements Auditable
 {
+
+    use \OwenIt\Auditing\Auditable;
+
     protected $table = 'f_price_level';
 
     public $primaryKey = 'f_price_level_id';

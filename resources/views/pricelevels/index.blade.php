@@ -43,7 +43,7 @@
                         @foreach($pricelevel as $pricelevels)
                         <tr>
                             <td class="text-center">
-                                {{$pricelevels->f_price_level_id}}
+                                <a href="price-levels/view/{{$pricelevels->f_price_level_id}}">{{$pricelevels->f_price_level_id}}</a>
                             </td>
                             <td class="font-w600">
                                 {{$pricelevels->f_price_level_name}}

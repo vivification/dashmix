@@ -48,24 +48,21 @@ class AccountsController extends Controller
 
     public function show($id)
     {
+        //get the audit log for this model
+        $audits = Account::find(1)->audits;
+
 
         /* No need to add get().  */
         $accounts = Account::with('account_type', 'account_status', 'account_industry', 'contact_primary', 'account_currency', 'price_level', 'contact_list')->find($id);
 
-        return view('accounts.show', compact('accounts' ));
+        return view('accounts.show', compact('accounts','audits' ));
     }
 
     public function editprimarycontact($id)
     {
 
 
-
-
-
-        return view('accounts.change-contact', compact('accounts' ));
     }
-
-
 
 
     public function edit($id)
@@ -86,27 +83,6 @@ class AccountsController extends Controller
 
     public function update(Request $request, $id)
     {
-
-        //Previous
-        //$accounts->accountname = $request->input('f_account_name');
-
-        //Newly Added
-//        $accounttype = $accounts->account_type()
-//            ->update([
-//                'accounttype'       => $request->
-//            ]);
-//
-//        $accounts = Account::where('id', $id)
-//            ->update([
-//                'accountname'        => $request->f_account_name,
-//                'accountaddress'     => $request->f_account_address_street,
-//                'accountphone'       => $request->f_account_phone_primary,
-//                'accountfax'         => $request->f_account_fax,
-//                'accountemail'       => $request->f_account_email_primary,
-//                'accountwebsite'     => $request->f_account_website,
-//                'accountabn'         => $request->f_account_abn,
-//                'accountvendor'      => $request->f_account_vendor
-//            ]);
 
         $accounts = Account::findorFail($id);
 

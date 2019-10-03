@@ -51,38 +51,43 @@ class PriceLevelsController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        //
+        $audits = PriceLevel::find(1)->audits;
+
+        $pricelevels = PriceLevel::findOrFail($id);
+
+        return view('pricelevels.show', compact('pricelevels', 'audits'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        //
+        $pricelevels = PriceLevel::findorFail($id);
+
+        return view('pricelevels.edit', compact('pricelevels'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $pricelevels = PriceLevel::findorFail($id);
+
+        $pricelevels->f_price_level_name        = $request->input('name');
+        $pricelevels->f_description             = $request->input('description');
+        $pricelevels->f_rate                    = $request->input('rate');
+        $pricelevels->f_status                  = $request->input('status');
+
+        $pricelevels->save();
+
+        return redirect('/price-levels');
+
+
+
+
+
+
     }
 
     /**

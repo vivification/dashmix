@@ -3,13 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\AccountType;
-use App\AccountStatus;
-use App\Http\Middleware;
+use OwenIt\Auditing\Contracts\Auditable;
 
 
-class Account extends Model
+class Account extends Model implements Auditable
 {
+
+    use \OwenIt\Auditing\Auditable;
+
     protected $table = 'f_accounts';
 
     protected $fillable = [

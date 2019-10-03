@@ -58,11 +58,11 @@
                                                                     <label type="text" name="accounttype">Account Type:</label>
                                                                     <div class="input-group">
                                                                         <div class="input-group">
-                                                                            <select class="form-control" name="accounttype">
-                                                                                @foreach($account_types as $account_type)
-                                                                                <option value="{{$account_types->f_account_type_id}}">{{$account_types->f_account_type_name}}</option>
-                                                                                @endforeach
-                                                                            </select>
+{{--                                                                            <select class="form-control" name="accounttype">--}}
+{{--                                                                                @foreach($account_types as $account_type)--}}
+{{--                                                                                <option value="{{$account_types->f_account_type_id}}">{{$account_types->f_account_type_name}}</option>--}}
+{{--                                                                                @endforeach--}}
+{{--                                                                            </select>--}}
                                                                         </div>
                                                                     </div>
                                                                 </div>

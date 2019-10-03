@@ -47,9 +47,12 @@ Auth::routes();
     Route::get('/quotes/{id}/download',     'QuotesController@download')->name('quotes.download');
     Route::get('/quotes/{id}/delete',       'QuotesController@destroy')->name('quotes.delete');
 
-    Route::get('/price-levels',             'PriceLevelsController@index')->name('pricelevels');
-    Route::get('/price-levels/create',      'PriceLevelsController@create')->name('pricelevels.create');
-    Route::post('/price-levels/store',      'PriceLevelsController@store')->name('pricelevels.store');
+    Route::get('/price-levels',                 'PriceLevelsController@index')->name('pricelevels');
+    Route::get('/price-levels/create',          'PriceLevelsController@create')->name('pricelevels.create');
+    Route::get('/price-levels/view/{id}',       'PriceLevelsController@show')->name('pricelevels.show');
+    Route::get('/price-levels/edit/{id}',       'PriceLevelsController@edit')->name('pricelevels.edit');
+    Route::post('/price-levels/update/{id}',    'PriceLevelsController@update')->name('pricelevels.update');
+    Route::post('/price-levels/store',          'PriceLevelsController@store')->name('pricelevels.store');
 
 
 

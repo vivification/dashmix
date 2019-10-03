@@ -50,6 +50,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#btabs-alt-static-notes">Notes +</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#btabs-alt-static-logs">Logs +</a>
+                                </li>
 
                             </ul>
                             <div class="block block-rounded block-bordered">
@@ -565,6 +568,36 @@
                                                 <tbody>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
+                                    {{--Start Logs--}}
+                                    <div class="tab-pane" id="btabs-alt-static-logs" role="tabpanel">
+                                        <!-- Dynamic Table Full -->
+                                        <div class="block block-rounded block-bordered">
+                                            <div class="block-header block-header-default">
+                                                <h3 class="block-title">
+                                                    <i class="far fa-address-book fa-lg"></i>
+                                                    Logs
+                                                </h3>
+                                            </div>
+                                            <div>
+                                                <ul>
+                                                    @forelse ($audits as $audit)
+                                                        <li>
+{{--                                                            This LANG file is located under resources -> lang -> en > accounts.php--}}
+                                                            @lang('/audit/accounts.updated.metadata', $audit->getMetadata())
+
+                                                            @foreach ($audit->getModified() as $attribute => $modified)
+                                                                <ul>
+                                                                    <li>@lang('/audit/accounts.'.$audit->event.'.modified.'.$attribute, $modified)</li>
+                                                                </ul>
+                                                            @endforeach
+                                                        </li>
+                                                    @empty
+                                                        <p>@lang('/audit/accounts.unavailable_audits')</p>
+                                                    @endforelse
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
