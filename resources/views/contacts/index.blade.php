@@ -63,7 +63,7 @@
                             </td>
                             <td class="font-w600">
                                 @if($contacts->additionalcontacts)
-                                {{$contact->additionalcontacts->f_account_name}}
+                                {{$contacts->additionalcontacts->f_account_name}}
                                 @endif
                             </td>
                             <td class="font-w600">
