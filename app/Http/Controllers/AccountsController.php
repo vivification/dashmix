@@ -77,7 +77,7 @@ class AccountsController extends Controller
 
         $account_types = AccountType::all();
 
-        return view('accounts.edit', compact('accounts', 'account_types'));
+        return view('accounts.edit', compact(['accounts', 'account_types']));
     }
 
 

@@ -47,9 +47,20 @@
                                                                     <label type="text" name="name">Account Status:</label>
                                                                     <div class="input-group">
                                                                         <select class="form-control" name="accountstatus">
-                                                                            @foreach($accounts as $account)
-                                                                                <option value="{{$accounts->account_status->f_account_status_id}}">{{$accounts->account_status->f_account_status_name}}</option>
-                                                                            @endforeach
+                                                                            @php
+                                                                            $selected = '';
+                                                                            if($accounts->account_status->f_account_status_id == 1) {
+                                                                                $selected = 'selected';
+                                                                            }
+                                                                            @endphp
+                                                                            <option value="1" {{$selected}}>Active</option>
+                                                                            @php
+                                                                                $selected = '';
+                                                                                if($accounts->account_status->f_account_status_id == 2) {
+                                                                                    $selected = 'selected';
+                                                                                }
+                                                                            @endphp
+                                                                            <option value="2"  {{$selected}}>Inactive</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -58,11 +69,11 @@
                                                                     <label type="text" name="accounttype">Account Type:</label>
                                                                     <div class="input-group">
                                                                         <div class="input-group">
-{{--                                                                            <select class="form-control" name="accounttype">--}}
-{{--                                                                                @foreach($account_types as $account_type)--}}
-{{--                                                                                <option value="{{$account_types->f_account_type_id}}">{{$account_types->f_account_type_name}}</option>--}}
-{{--                                                                                @endforeach--}}
-{{--                                                                            </select>--}}
+                                                                            <select class="form-control" name="accounttype">
+                                                                                @foreach($account_types as $account_type)
+                                                                                <option value="{{$account_type->f_account_type_id}}">{{$account_type->f_account_type_name}}</option>
+                                                                                @endforeach
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                 </div>
